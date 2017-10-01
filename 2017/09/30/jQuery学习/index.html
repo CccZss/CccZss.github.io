@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Nodejs学习笔记 | Hexo</title>
+  <title>jQuery学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Express12345678910111213var express = require(&apos;express&apos;)var app = express()app.set(&apos;port&apos;, process.env.PORT || 3000)app.get(&apos;URL&apos;, function(req, res)&amp;#123;    res.type(&apos;xxx&apos;)    res.send(&apos;xxx&apos;)&amp;#125;)">
-<meta name="keywords" content="nodejs">
+  <meta name="description" content="[TOC] 1. 介绍1. jQuery 简介 jQuery 是一个 JavaScript 库。 jQuery 极大地简化了 JavaScript 编程。（选择器，DOM，事件处理，Ajax，兼容性，链式操作，插件等 ） jQuery 很容易学习 。 jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, （1.9版本 包括Internet Expl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nodejs学习笔记">
-<meta property="og:url" content="http://yoursite.com/2017/09/29/Nodejs学习笔记/index.html">
+<meta property="og:title" content="jQuery学习">
+<meta property="og:url" content="http://yoursite.com/2017/09/30/jQuery学习/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Express12345678910111213var express = require(&apos;express&apos;)var app = express()app.set(&apos;port&apos;, process.env.PORT || 3000)app.get(&apos;URL&apos;, function(req, res)&amp;#123;    res.type(&apos;xxx&apos;)    res.send(&apos;xxx&apos;)&amp;#125;)">
-<meta property="og:updated_time" content="2017-10-01T08:07:44.338Z">
+<meta property="og:description" content="[TOC] 1. 介绍1. jQuery 简介 jQuery 是一个 JavaScript 库。 jQuery 极大地简化了 JavaScript 编程。（选择器，DOM，事件处理，Ajax，兼容性，链式操作，插件等 ） jQuery 很容易学习 。 jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, （1.9版本 包括Internet Expl">
+<meta property="og:image" content="http://wenzhixin.net.cn/posts/2013/05/24/attr_prop.png">
+<meta property="og:updated_time" content="2017-10-01T08:16:36.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nodejs学习笔记">
-<meta name="twitter:description" content="Express12345678910111213var express = require(&apos;express&apos;)var app = express()app.set(&apos;port&apos;, process.env.PORT || 3000)app.get(&apos;URL&apos;, function(req, res)&amp;#123;    res.type(&apos;xxx&apos;)    res.send(&apos;xxx&apos;)&amp;#125;)">
+<meta name="twitter:title" content="jQuery学习">
+<meta name="twitter:description" content="[TOC] 1. 介绍1. jQuery 简介 jQuery 是一个 JavaScript 库。 jQuery 极大地简化了 JavaScript 编程。（选择器，DOM，事件处理，Ajax，兼容性，链式操作，插件等 ） jQuery 很容易学习 。 jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, （1.9版本 包括Internet Expl">
+<meta name="twitter:image" content="http://wenzhixin.net.cn/posts/2013/05/24/attr_prop.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,471 +155,844 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Nodejs学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jQuery学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Nodejs学习笔记
+      jQuery学习
     </h1>
   
 
         
-        <a href="/2017/09/29/Nodejs学习笔记/" class="archive-article-date">
-  	<time datetime="2017-09-29T15:13:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+        <a href="/2017/09/30/jQuery学习/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line">app.set(<span class="string">'port'</span>, process.env.PORT || <span class="number">3000</span>)</div><div class="line"></div><div class="line">app.get(<span class="string">'URL'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    res.type(<span class="string">'xxx'</span>)</div><div class="line">    res.send(<span class="string">'xxx'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>)</span>&#123;</div><div class="line">    res.status(<span class="number">404</span>)</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>[TOC]</p>
+<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h2><h3 id="1-jQuery-简介"><a href="#1-jQuery-简介" class="headerlink" title="1. jQuery 简介"></a>1. jQuery 简介</h3><ul>
+<li>jQuery 是一个 JavaScript 库。</li>
+<li>jQuery 极大地简化了 JavaScript 编程。（选择器，DOM，事件处理，Ajax，兼容性，链式操作，插件等 ）</li>
+<li>jQuery 很容易学习 。</li>
+<li>jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, （1.9版本 包括Internet Explorer 6 7 8）</li>
+</ul>
 <a id="more"></a>
+<h3 id="2-jQuery的发展"><a href="#2-jQuery的发展" class="headerlink" title="2. jQuery的发展"></a>2. jQuery的发展</h3><p>目前jQuery仍然被广泛的使用，而且很多插件或库也是在其基础上搭建的，这是我们去学习使用它的原因之一，但是不能因其封装了好用而丢弃了其核心—JavaScript，原生js必须要掌握。</p>
+<p>而且前端发展很快，现代较新的浏览器原生 API 已经足够好用，同时由于 React、Vue 等框架的流行，直接操作 DOM 不再是好的模式，jQuery 使用场景将逐渐减少。</p>
+<h3 id="3-jQuery的使用"><a href="#3-jQuery的使用" class="headerlink" title="3. jQuery的使用"></a>3. jQuery的使用</h3><ol>
+<li><p>网上下载 jQuery 库文件</p>
+<ul>
+<li>jquery-3.2.1.js</li>
+<li>jquery-3.2.1.min.js</li>
+<li>使用 CDN</li>
+</ul>
+</li>
+<li><p>引入jQuery</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 注意引入顺序</div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.2.1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">srcipt</span> <span class="attr">src</span>=<span class="string">"xxx.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">srcipt</span>&gt;</span></div></pre></td></tr></table></figure>
 <ol>
-<li><p>app.use()</p>
-<blockquote>
-<p>app.use是Expreess 添加中间件的一个方法</p>
+<li>使用</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">    //放肆的写你的代码</div><div class="line">&#125;)</div><div class="line"></div><div class="line">$(function()&#123;</div><div class="line">    //简写模式</div><div class="line">&#125;)</div><div class="line"></div><div class="line">//区别</div><div class="line">window.onload = function()&#123; &#125;  //加载时间 ， 个数</div></pre></td></tr></table></figure>
+<h2 id="2-jQuery选择器"><a href="#2-jQuery选择器" class="headerlink" title="2. jQuery选择器"></a>2. jQuery选择器</h2><h3 id="2-1-基本选择器"><a href="#2-1-基本选择器" class="headerlink" title="2.1. 基本选择器"></a>2.1. 基本选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>*</strong></td>
+<td>通用元素选择器，匹配任何元素</td>
+</tr>
+<tr>
+<td>E</td>
+<td>标签选择器，匹配所有使用E标签的元素</td>
+</tr>
+<tr>
+<td>.info</td>
+<td>class选择器，匹配所有class属性中包含info的元素</td>
+</tr>
+<tr>
+<td>#footer</td>
+<td>id选择器，匹配所有id属性等于footer的元素</td>
+</tr>
+<tr>
+<td>$(‘div, span, p.myClass’)</td>
+<td>并列选择器</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-2-层次选择器"><a href="#2-2-层次选择器" class="headerlink" title="2.2. 层次选择器"></a>2.2. 层次选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E F</td>
+<td>后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔</td>
+</tr>
+<tr>
+<td>E &gt; F</td>
+<td>子元素选择器，匹配所有E元素的子元素F</td>
+</tr>
+<tr>
+<td>E + F</td>
+<td>毗邻元素选择器，匹配所有紧随E元素之后的同级元素F</td>
+</tr>
+<tr>
+<td>$(“prev ~ siblings”)</td>
+<td>prev元素之后的所有 siblings 元素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-3-过滤选择器"><a href="#2-3-过滤选择器" class="headerlink" title="2.3. 过滤选择器"></a>2.3. 过滤选择器</h3><blockquote>
+<p>从获取的所有元素中过滤出需要的元素，注意元素和过来选择器之间不要有空格</p>
 </blockquote>
-<ul>
-<li>在Express 中，路由和中间件的添加顺序至关重要（如404处理器要放在页面后面）</li>
-</ul>
-</li>
-</ol>
-<p>Handelbars</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"><span class="keyword">var</span> handelbars = <span class="built_in">require</span>(<span class="string">'express3-handlebars'</span>).create(&#123;<span class="attr">defaultLayout</span>: <span class="string">'main'</span>&#125;) </div><div class="line"><span class="comment">// 表明默认使用文件名为 main.handelbars 的文件作为所有视图的默认布局</span></div><div class="line"></div><div class="line">app.engine(<span class="string">'handlebars'</span>, handlebars.engine)</div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'handlebars'</span>)</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">   res.render(<span class="string">'home'</span>, &#123;<span class="attr">message</span>: <span class="string">'the message'</span> &#125; )    <span class="comment">// 上面已指定渲染引擎为 handlebars, 可携带变量渲染到页面</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- home.handlebars --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> this is home page <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> &#123;&#123; message &#125;&#125; <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>静态文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">app.use(express.static(__dirname + <span class="string">'/public'</span>))</div><div class="line"><span class="comment">// 访问 public文件夹里面的静态资源时，访问路径不需要加 public/</span></div></pre></td></tr></table></figure>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><ol>
-<li><p>单元测试 (mocha + chai)</p>
-<p>1) 在 webpack 环境下</p>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> add = <span class="built_in">require</span>(<span class="string">'./add.js'</span>);</div><div class="line"><span class="keyword">var</span> expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect;</div><div class="line"></div><div class="line">describe(<span class="string">'加法函数的测试'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  it(<span class="string">'1 加 1 应该等于 2'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    expect(add(<span class="number">1</span>, <span class="number">1</span>)).to.be.equal(<span class="number">2</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>​   2) 在原生环境下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"../vendor/mocha.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span> </div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"../vendor/chai.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="comment">//copy node_modules/mocha/mocha.js</span></div><div class="line"><span class="comment">//copy node_modules/chai/chai.js</span></div><div class="line"></div><div class="line">mocha.ui(<span class="string">'bdd'</span>)  <span class="comment">//直接访问 window.mocha</span></div><div class="line"><span class="keyword">var</span> assert = chai.assert   </div><div class="line"><span class="keyword">var</span> expect = chai.expect</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"></div><div class="line">describe(<span class="string">'加法函数的测试'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  it(<span class="string">'1 加 1 应该等于 2'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    expect(add(<span class="number">1</span>, <span class="number">1</span>)).to.be.equal(<span class="number">2</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">mocha.run()</div></pre></td></tr></table></figure>
-<ol>
-<li>跨页面测试</li>
-</ol>
-<ul>
-<li><p>Selenium</p>
-</li>
-<li><p>PhantomJS</p>
-</li>
-<li><p>Zombie ( 不支持 windows )</p>
-<p>​</p>
-</li>
-</ul>
-<ol>
-<li>去毛</li>
-</ol>
-<ul>
-<li><p>JSHint</p>
-</li>
-<li><p>JSLint</p>
-<p>​</p>
-</li>
-</ul>
-<ol>
-<li>链接检查</li>
-</ol>
-<ul>
-<li><p>LinkChecker</p>
-<p>​</p>
-</li>
-</ul>
-<ol>
-<li>持续集成 Continuous Integration (CI)</li>
-</ol>
-<ul>
-<li><p><a href="https://www.liaoxuefeng.com/article/0014631488240837e3633d3d180476cb684ba7c10fda6f6000" target="_blank" rel="external">Travis CI</a></p>
-</li>
-<li><p>Jenkins</p>
-</li>
-<li><p>TeamCity</p>
-<p>​</p>
-</li>
-</ul>
-<h1 id="请求和响应对象"><a href="#请求和响应对象" class="headerlink" title="请求和响应对象"></a>请求和响应对象</h1><ol>
-<li><p>请求报头</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/headers'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">     res.set(<span class="string">'Content-Type'</span>, <span class="string">'text/plain'</span>);</div><div class="line">     <span class="keyword">var</span> s = <span class="string">''</span>;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> name <span class="keyword">in</span> req.headers)&#123;</div><div class="line">         s += name + <span class="string">': '</span> + req.headers[name] + <span class="string">'\n'</span>;</div><div class="line">     &#125;</div><div class="line">     res.send(s);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>响应报头</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.disable(<span class="string">'x-powered-by'</span>)   <span class="comment">// 处于安全考虑，禁用服务器响应头中的 X-Powered-By 头信息。</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>互联网媒体类型</p>
-<ul>
-<li>content type</li>
-<li>Internet media type</li>
-<li>MIME type</li>
-</ul>
-</li>
-<li><p>请求体</p>
-</li>
-</ol>
-<table>
+<h4 id="2-3-1-基本过滤选择器"><a href="#2-3-1-基本过滤选择器" class="headerlink" title="2.3.1 基本过滤选择器"></a>2.3.1 基本过滤选择器</h4><table>
 <thead>
 <tr>
-<th>值</th>
-<th>描述</th>
+<th>选 择 器</th>
+<th>描 述</th>
+<th>返 回</th>
+<th>示 例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>application/x-www-form-urlencoded（默认</td>
-<td>在发送前编码所有字符，使用encodeURI( ) 按照base64编码（url通用的编码方式），通过decodeURI( )来解码。</td>
+<td>:first</td>
+<td>选取第1个元素</td>
+<td>单个元素</td>
+<td>$(“div:first”)选取所有 <div>元素中第一个<div>元素</div></div></td>
 </tr>
 <tr>
-<td>multipart/form-data</td>
-<td>不对字符编码。在使用包含文件上传控件的表单时，必须使用该值。</td>
+<td>:last</td>
+<td>选取最后1个元素</td>
+<td>单个元素</td>
+<td>$(“div:last”)选取所有 <div>元素中最后一个<div>元素</div></div></td>
 </tr>
 <tr>
-<td>multipart/json</td>
-<td>将内容转换为 json 格式</td>
+<td>:not(selector)</td>
+<td>去除所有与给定选择器匹配的元素</td>
+<td>集合元素</td>
+<td>$(“input:not(.myClass)”)选取class不是myClass的<input>元素</td>
 </tr>
 <tr>
-<td>text/plain</td>
-<td>空格转换为 “+” 加号，但不对特殊字符编码。</td>
+<td>:even</td>
+<td>选取索引(从0开始)是偶数的所有元素</td>
+<td>集合元素</td>
+<td>$(“input:even”)选取索引是偶数的<input>元素</td>
+</tr>
+<tr>
+<td>:odd</td>
+<td>选取索引(从0开始)是奇数的所有元素</td>
+<td>集合元素</td>
+<td>$(“input:odd”)选取索引是奇数的<input>元素</td>
+</tr>
+<tr>
+<td>:eq(index)</td>
+<td>选取索引(从0开始)等于index的元素</td>
+<td>单个元素</td>
+<td>$(“input:eq(1)”)选取索引等于1的<input>元素</td>
+</tr>
+<tr>
+<td>:gt(index)</td>
+<td>选取索引(从0开始)大于index的元素</td>
+<td>集合元素</td>
+<td>$(“input:gt(1)”)选取索引大于1的<input>元素</td>
+</tr>
+<tr>
+<td>:lt(index)</td>
+<td>选取索引(从0开始)小于index的元素</td>
+<td>集合元素</td>
+<td>$(“input:lt(1)”)选取索引小于1的<input>元素</td>
+</tr>
+<tr>
+<td>:header</td>
+<td>选取所有的标题元素，即<h1>到<h6></h6></h1></td>
+<td>集合元素</td>
+<td>$(“:header”)选取页面中所有的标题元素</td>
+</tr>
+<tr>
+<td>:animated</td>
+<td>选取当前正在执行动画的所有元素</td>
+<td>集合元素</td>
+<td>$(“div:animated”)选取当前正在执行动画的<div>元素</div></td>
 </tr>
 </tbody>
 </table>
-<ol>
-<li>请求对象 request</li>
-</ol>
-<table>
+<h4 id="2-3-2-内容过滤选择器"><a href="#2-3-2-内容过滤选择器" class="headerlink" title="2.3.2 内容过滤选择器"></a>2.3.2 内容过滤选择器</h4><table>
 <thead>
 <tr>
-<th>属性</th>
-<th>描述</th>
+<th>选 择 器</th>
+<th>描 述</th>
+<th>返 回</th>
+<th>示 例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>params</td>
-<td>获取命名过的路由参数</td>
+<td>:contains(text)</td>
+<td>选取含有文本内容为 text 的元素</td>
+<td>集合元素</td>
+<td>$(“div:contains(‘test’)”)选取含有文本内容为 test 的<div>元素</div></td>
 </tr>
 <tr>
-<td>query</td>
-<td>获取URL的查询参数串</td>
+<td>:empty</td>
+<td>选取不包含子元素或文本的空元素</td>
+<td>集合元素</td>
+<td>$(“div:empty”)选取不包含子元素或文本的空<div>元素</div></td>
 </tr>
 <tr>
-<td>body</td>
-<td>获取请求主体</td>
+<td>:has(selector)</td>
+<td>选取含有给定选择器匹配的元素的元素</td>
+<td>集合元素</td>
+<td>$(“div:has(.myClass)”)选取含有class为myClass的元素的<div>元素</div></td>
 </tr>
 <tr>
-<td>route</td>
-<td>获取当前匹配的路由的信息</td>
-</tr>
-<tr>
-<td>cookies</td>
-<td>获取客户端传递过来的 cokies 值</td>
-</tr>
-<tr>
-<td>headers</td>
-<td>获取客户端发送的请求报头</td>
-</tr>
-<tr>
-<td>accepts( [ types ] )</td>
-<td>检查客户端可接受的一个或一组指定类型</td>
-</tr>
-<tr>
-<td>ip</td>
-<td>客户端 ip</td>
-</tr>
-<tr>
-<td>protocol</td>
-<td>请求的协议</td>
-</tr>
-<tr>
-<td>hostname</td>
-<td>客户端主机名</td>
-</tr>
-<tr>
-<td>path</td>
-<td>请求路径（不包括协议、主机、端口或查询字符串）</td>
-</tr>
-<tr>
-<td>xhr</td>
-<td>判断请求是否由 Ajax 发起</td>
-</tr>
-<tr>
-<td>secure</td>
-<td>连接是否安全（req.protocal === https）</td>
-</tr>
-<tr>
-<td>url / originalUrl</td>
-<td>返回原始路径和查询语句（不包括协议、主机、端口）。url 可重写</td>
-</tr>
-<tr>
-<td>baseUrl</td>
-<td>获取路由当前安装的URL路径</td>
-</tr>
-<tr>
-<td>acceptedLanguages</td>
-<td>返回客户端首选的一组（人类的）语言</td>
-</tr>
-<tr>
-<td>app</td>
-<td>当callback为外部文件时，用req.app访问express的实例</td>
-</tr>
-<tr>
-<td>fresh / stale</td>
-<td>判断请求是否还「新鲜」</td>
-</tr>
-<tr>
-<td>subdomains</td>
-<td>获取子域名</td>
-</tr>
-<tr>
-<td>get( )</td>
-<td>获取指定的HTTP请求头</td>
-</tr>
-<tr>
-<td>is( )</td>
-<td>判断请求头Content-Type的MIME类型</td>
+<td>:parent</td>
+<td>选取含有子元素或文本的元素</td>
+<td>集合元素</td>
+<td>$(“div:parent”)选取含有子元素或文本的<div>元素</div></td>
 </tr>
 </tbody>
 </table>
-<ol>
-<li>响应对象 response</li>
-</ol>
-<table>
+<h4 id="2-3-3-可见性过滤选择器"><a href="#2-3-3-可见性过滤选择器" class="headerlink" title="2.3.3 可见性过滤选择器"></a>2.3.3 可见性过滤选择器</h4><table>
 <thead>
 <tr>
-<th>属性</th>
-<th>描述</th>
+<th>选 择 器</th>
+<th>描 述</th>
+<th>返 回</th>
+<th>示 例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>status( code )</td>
-<td>设置HTTP状态码</td>
+<td>:hidden</td>
+<td>选取所有不可见的元素</td>
+<td>集合元素</td>
+<td>$(“div:hidden”)选取所有不可见的<div>元素</div></td>
 </tr>
 <tr>
-<td>set( name, value )</td>
-<td>设置HTTP头，传入object可以一次设置多个头</td>
+<td>:visible</td>
+<td>选取所有不可见的元素</td>
+<td>集合元素</td>
+<td>$(“div:visible”)选取所有可见的<div>元素</div></td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-3-4-属性过滤选择器"><a href="#2-3-4-属性过滤选择器" class="headerlink" title="2.3.4 属性过滤选择器"></a>2.3.4 属性过滤选择器</h4><table>
+<thead>
+<tr>
+<th>选 择 器</th>
+<th>描 述</th>
+<th>返 回</th>
+<th>示 例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[attribute]</td>
+<td>选取拥有此属性的元素</td>
+<td>集合元素</td>
+<td>$(“div[id]”)选取拥有属性id的元素</td>
 </tr>
 <tr>
-<td>cookie( name, value, [options] )</td>
-<td>设置Cookie</td>
+<td>[attribute=value]</td>
+<td>选取属性的值为value的元素</td>
+<td>集合元素</td>
+<td>$(“div[title=test]”)选取属性 title 为test 的<div>元素</div></td>
 </tr>
 <tr>
-<td>clearCookie(name, [options])</td>
-<td>清除Cookie</td>
+<td>[attribute!=value]</td>
+<td>选取属性的值不等于value的元素</td>
+<td>集合元素</td>
+<td>$(“div[title!=test]”)选取属性 title 不等于 test 的<div>元素</div></td>
 </tr>
 <tr>
-<td>redirect( [status] , url )</td>
-<td>重定向浏览器，默认 status 为 302</td>
+<td>[attribute^=value]</td>
+<td>选取属性的值以value开始的元素</td>
+<td>集合元素</td>
+<td>$(“div[title^=test]”)选取属性 title 以test 开始的<div>元素</div></td>
 </tr>
 <tr>
-<td>send( [status], body )</td>
-<td>传送HTTP响应</td>
-</tr>
-<tr>
-<td>json( [status], json )</td>
-<td>传送JSON响应</td>
-</tr>
-<tr>
-<td>jsonp( [status], json )</td>
-<td>传送JSONP响应</td>
-</tr>
-<tr>
-<td>type( type )</td>
-<td>设置Content-Type的MIME类型</td>
-</tr>
-<tr>
-<td>format( object )</td>
-<td>允许你根据接收的请求报头发送不同的内容</td>
-</tr>
-<tr>
-<td>attachment( [filename] )</td>
-<td>将响应头 Content-Disposition 设为 attachment，浏览器会选择下载而不是展示内容，还需要将内容发送到客户端</td>
-</tr>
-<tr>
-<td>download( path, [filename], [callback] )</td>
-<td>将响应头 Content-Disposition 设为 attachment，并通过 path 参数指定要下载的文件，无需再将内容发送到出去</td>
-</tr>
-<tr>
-<td>sendfile( path, [option], [callback])</td>
+<td>[attribute$=value]</td>
+<td>选取属性的值以value结束的元素</td>
+<td>集合元素</td>
+<td>$(“div[title$=test]”)选取属性 title 以test 结束的<div>元素</div></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>locals, render</td>
-<td>locals 返回一个用于渲染视图的默认上下文。 render使用配置的模板引擎渲染视图</td>
+<td>[attribute*=value]</td>
+<td>选取属性的值含有value的元素</td>
+<td>集合元素</td>
+<td>$(“div[title*=test]”)选取属性 title 含有 test 的<div>元素</div></td>
 </tr>
 <tr>
-<td>app</td>
-<td>当callback为外部文件时，用req.app访问express的实例</td>
-</tr>
-<tr>
-<td>append</td>
-<td>最佳指定的 HTTP 头</td>
-</tr>
-<tr>
-<td>opition</td>
-<td>domain / expires / httpOnly / maxAge / path / secure / signed</td>
-</tr>
-<tr>
-<td>get()</td>
-<td>返回指定的HTTP头</td>
-</tr>
-<tr>
-<td>location()</td>
-<td>只设置响应的Location HTTP头，不设置状态码或者close response</td>
+<td>[selector1][selector2]…[selectorN]</td>
+<td>选取匹配以上所有属性选择器的元素</td>
+<td>集合元素</td>
+<td>$(“div[id][title*=test]”)选取拥有属性id，且属性 title 含有 test 的<div>元素</div></td>
 </tr>
 </tbody>
 </table>
-<h1 id="Handlebars模板引擎"><a href="#Handlebars模板引擎" class="headerlink" title="Handlebars模板引擎"></a>Handlebars模板引擎</h1><ol>
-<li><p>注释</p>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="comment">&#123;&#123;! comment goes here&#125;&#125;</span><span class="xml">  //不会被传递到浏览器上      </span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"><span class="comment">&lt;!-- not-so-secret comment --&gt;</span> //普通 HTML 注释，能在 HTML 源码上看到</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>更改后缀名</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> handlebars = <span class="built_in">require</span>(<span class="string">'express3-handlebars'</span>)</div><div class="line"> .create(&#123;</div><div class="line">     extname: <span class="string">'.hbs'</span>,       <span class="comment">//这里</span></div><div class="line"> &#125;)</div><div class="line"></div><div class="line">app.engine(<span class="string">'hbs'</span>, handlebars.engine)   <span class="comment">//这里要用 hbs</span></div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'hbs'</span>);         <span class="comment">//这里要用 hbs</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>块级表达式</p>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="xml">//上下文</span></div><div class="line"><span class="xml">&#123;</span></div><div class="line"><span class="xml">     list: [&#123;</span></div><div class="line"><span class="xml">         name: 'aaa', </span></div><div class="line"><span class="xml">         price: '123'</span></div><div class="line"><span class="xml">     &#125;],</span></div><div class="line"><span class="xml">     isTrue: true,</span></div><div class="line"><span class="xml">     isFalse: false</span></div><div class="line"><span class="xml">&#125;</span></div></pre></td></tr></table></figure>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="xml">// 模板使用</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"></span><span class="template-tag">&#123;&#123;#<span class="name"><span class="builtin-name">each</span></span> list&#125;&#125;</span><span class="xml"> </span><span class="template-variable">&#123;&#123;name&#125;&#125;</span><span class="xml"> - </span><span class="template-variable">&#123;&#123;price&#125;&#125;</span><span class="xml"> </span><span class="template-tag">&#123;&#123;/<span class="name"><span class="builtin-name">each</span></span>&#125;&#125;</span><span class="xml">  //遍历 list 数组，里面为数组每一项的作用域</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"></span><span class="template-tag">&#123;&#123;#<span class="name"><span class="builtin-name">if</span></span> isTrue&#125;&#125;</span><span class="xml"> tttt </span><span class="template-variable">&#123;&#123;<span class="builtin-name">else</span>&#125;&#125;</span><span class="xml"> ffff </span><span class="template-tag">&#123;&#123;/<span class="name"><span class="builtin-name">if</span></span>&#125;&#125;</span><span class="xml">   // 当 isTrue 为真或不为空时输出 tttt</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"></span><span class="template-tag">&#123;&#123;#<span class="name"><span class="builtin-name">unless</span></span> isFasle&#125;&#125;</span><span class="xml"> ffff </span><span class="template-tag">&#123;&#123;/<span class="name"><span class="builtin-name">unless</span></span>&#125;&#125;</span><span class="xml">  // 当 isFalse 为假时输出 ffff</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"></span><span class="template-variable">&#123;&#123;foo&#125;&#125;</span><span class="xml">  //指向名为 foo 的方法</span></div><div class="line"><span class="xml"></span><span class="template-variable">&#123;&#123;./foo&#125;&#125;</span><span class="xml">  //指向名为 foo 的属性</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>布局 layouts</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> handlebars =  <span class="built_in">require</span>(<span class="string">'express3-handlebars'</span>)</div><div class="line"> .create(&#123;</div><div class="line">     defaultLayout: <span class="string">'main'</span>  <span class="comment">//设置默认布局</span></div><div class="line"> &#125;)</div><div class="line"></div><div class="line">app.get(<span class="string">'/foo'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">     res.render(<span class="string">'foo'</span>, &#123;</div><div class="line">         layout: <span class="string">'newLay'</span>   <span class="comment">//指定布局，即 foot 视图会渲染在 newLay 布局的 &#123;&#123;&#123;body&#125;&#125;&#125; 中</span></div><div class="line">     &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>视图</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// views/home.hbs</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">h1</span>&gt;</span> This is home page <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">     h1 &#123;</span></div><div class="line"><span class="css">     <span class="selector-tag">color</span>: <span class="selector-id">#03a9f4</span>;</span></div><div class="line"><span class="undefined"> &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>局部文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// server.js </span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>)</span>&#123;</div><div class="line"> <span class="keyword">if</span>(!res.locals.partials)&#123;</div><div class="line">     res.locals.partials = &#123;&#125;</div><div class="line">     res.locals.partials.homeInfo = [</div><div class="line">         &#123;<span class="attr">info</span>: <span class="string">'aaaaaaaaaa'</span>&#125;,</div><div class="line">         &#123;<span class="attr">info</span>: <span class="string">'bbbbbbbbbb'</span>&#125;,</div><div class="line">         &#123;<span class="attr">info</span>: <span class="string">'cccccccccc'</span>&#125;,</div><div class="line">         &#123;<span class="attr">info</span>: <span class="string">'dddddddddd'</span>&#125;</div><div class="line">     ]</div><div class="line"> &#125;</div><div class="line"> next()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// views/partials/header.hbs</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">div</span>&gt;</span> head <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">     &#123;&#123;#each partials.homeInfo&#125;&#125;      //在 res.locals.partials.homeInfo 上下文</div><div class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;info&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">     &#123;&#123;/each&#125;&#125;</div><div class="line"> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined"> div &#123;</span></div><div class="line"><span class="undefined">     background-color: black;</span></div><div class="line"><span class="undefined">     color: white;</span></div><div class="line"><span class="undefined"> &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>使用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// home.hbs</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></div><div class="line">     &#123;&#123;&gt;header&#125;&#125;   //模板引擎会找 partials/header.hbs 替换进来</div><div class="line"> <span class="tag">&lt;<span class="name">h1</span>&gt;</span> This is home page <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>段落</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  server.js</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> handlebars = <span class="built_in">require</span>(<span class="string">'express3-handlebars'</span>)</div><div class="line"> .create(&#123;</div><div class="line">     defaultLayout: <span class="string">'main'</span>,</div><div class="line">         helpers: &#123;</div><div class="line">             <span class="comment">// 定义一个叫section的辅助方法</span></div><div class="line">         section: <span class="function"><span class="keyword">function</span>(<span class="params">name, options</span>)</span>&#123;    </div><div class="line">             <span class="keyword">if</span>(!<span class="keyword">this</span>._sections) <span class="keyword">this</span>._sections = &#123;&#125;;</div><div class="line">             <span class="keyword">this</span>._sections[name] = options.fn(<span class="keyword">this</span>);</div><div class="line">             <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">         &#125;</div><div class="line">     &#125;</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 视图</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 段落：head --&gt;</span></div><div class="line">&#123;&#123;#section 'head'&#125;&#125;</div><div class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"home"</span> <span class="attr">content</span>=<span class="string">"home"</span>&gt;</span></div><div class="line">&#123;&#123;/section&#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 模板 body --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> this is home page <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!--  段落：js --&gt;</span></div><div class="line">&#123;&#123;#section 'js'&#125;&#125;</div><div class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">     alert(<span class="string">'aaaaaa'</span>)</span></div><div class="line"><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">&#123;&#123;/section&#125;&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 布局</div><div class="line"></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-cmn-Hans"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"> <span class="comment">&lt;!-- 段落：head --&gt;</span></div><div class="line">    &#123;&#123;&#123;_sections.head&#125;&#125;&#125;   </div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">     <span class="comment">&lt;!-- 模板 body --&gt;</span></div><div class="line"> &#123;&#123;&#123;body&#125;&#125;&#125;</div><div class="line"></div><div class="line">     <span class="comment">&lt;!--  段落：js --&gt;</span></div><div class="line"> &#123;&#123;&#123;_sections.jquery&#125;&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="表单处理"><a href="#表单处理" class="headerlink" title="表单处理"></a>表单处理</h1><ol>
-<li><p>一些要点</p>
-<ul>
-<li>编码 application/x-wwwform-urlencoded 是受 Express 支持的基本、易用的编码</li>
-<li>303 重定向：HTTP 1.1 添加了响应代码 303 用来解决302重定向的滥用，HTTP规范明确地表明浏览器 303 重定向后，无论之前是什么方法，都应该使用 GET 请求。      </li>
-</ul>
-</li>
-<li><p>文件上传</p>
-<p>参考：</p>
-<p><a href="https://itbilu.com/nodejs/core/VkK5RCoXW.html" target="_blank" rel="external">Node.js HTTP服务器中不依赖第三方模块的文件、图片上传</a><br><a href="https://itbilu.com/nodejs/npm/41vWPhuEb.html" target="_blank" rel="external">formidable 与Node.js 多文件/图片上传</a> </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/contest/vacation-photo/&#123;&#123;year&#125;&#125;/&#123;&#123;month&#125;&#125;"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"photo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>unload<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> formidable = <span class="built_in">require</span>(<span class="string">'formidable'</span>)  <span class="comment">//处理复合表单</span></div><div class="line"></div><div class="line">app.post(<span class="string">'/contest/vacation-photo/:year/:month'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> form = <span class="keyword">new</span> formidable.IncomingForm()</div><div class="line">    form.parse(req, <span class="function"><span class="keyword">function</span>(<span class="params">err, fields, files</span>)</span>&#123;  </div><div class="line">        <span class="keyword">if</span>(err) &#123;</div><div class="line">            <span class="keyword">return</span> res.redirect(<span class="number">303</span>, <span class="string">'/error'</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> tmp_path = files.photo.path;     <span class="comment">//临时文件路径</span></div><div class="line">        <span class="keyword">var</span> target_path = <span class="string">'./public/unload/'</span> + files.photo.name  <span class="comment">//上传目的路径</span></div><div class="line">        fs.rename(tmp_path, target_path, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span>(err) &#123;</div><div class="line">                <span class="keyword">throw</span> err </div><div class="line">            &#125;</div><div class="line">            fs.unlink(tmp_path, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;       <span class="comment">//删除临时文件</span></div><div class="line">                <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">                res.redirect(<span class="number">303</span>, <span class="string">'/'</span>)</div><div class="line">            &#125;)</div><div class="line">        &#125;) </div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="Cookie-与-Session"><a href="#Cookie-与-Session" class="headerlink" title="Cookie 与 Session"></a>Cookie 与 Session</h1><ol>
-<li><p>使用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// credentials.js</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;   </div><div class="line">     cookieSecret: <span class="string">'asdfasdfasfasdfasdfasdf'</span>  <span class="comment">//cookie 秘钥</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// sever.js</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> credentials = <span class="built_in">require</span>(<span class="string">'./credentials.js'</span>)</div><div class="line">app.use(<span class="built_in">require</span>(<span class="string">'cookie-parser'</span>)(credentials.cookieSecret))</div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123; </div><div class="line">  </div><div class="line">     <span class="comment">// 获取 cookie    </span></div><div class="line"> <span class="keyword">var</span> cookieItem = req.cookies.monster    </div><div class="line"> <span class="keyword">var</span> signedCookieItem = req.signedCookies.signed_monster        </div><div class="line"></div><div class="line"> <span class="comment">// 添加 cookie   </span></div><div class="line"> res.cookie(<span class="string">'monster'</span>, <span class="string">'nom nom'</span>)    <span class="comment">//设置 cookie   </span></div><div class="line"> res.cookie(<span class="string">'signed_monster'</span>, <span class="string">'nomm nomm'</span>, &#123;<span class="attr">signed</span>: <span class="literal">true</span>&#125;)  <span class="comment">//设置签名 cookie        </span></div><div class="line">                  </div><div class="line">    <span class="comment">// 删除 cookie    </span></div><div class="line"> res.clearCookie(<span class="string">'monster'</span>)      </div><div class="line">    </div><div class="line"> res.render(<span class="string">'home'</span>, &#123;</div><div class="line">     title: <span class="string">'HOME PAGE'</span>  </div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>cookie( name, value [, option] ) 的 option 属性</p>
-</li>
-</ol>
-<table>
+<h4 id="2-3-5-子元素过滤选择器"><a href="#2-3-5-子元素过滤选择器" class="headerlink" title="2.3.5 子元素过滤选择器"></a>2.3.5 子元素过滤选择器</h4><table>
 <thead>
 <tr>
-<th>属性</th>
-<th>描述</th>
+<th>选 择 器</th>
+<th>描 述</th>
+<th>返 回</th>
+<th>示 例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>domian</td>
-<td>控制跟 cookie 关联的域名</td>
+<td>:nth-child(index/even/odd/equation)</td>
+<td>选取每个父元素下的第index(索引值为奇数/索引值为偶数/索引值等于某个表达式)个子元素，index从1开始</td>
+<td>集合元素</td>
+<td>$(“div:nth-child(1)”)选取每个<div>中第一个子元素</div></td>
 </tr>
 <tr>
-<td>path</td>
-<td>表示 cookie 影响到的路径，匹配该路径才发送这个 cookie。</td>
+<td>:first-child</td>
+<td>选取每个父元素下的第1个子元素</td>
+<td>集合元素</td>
+<td>$(“div :first-child”)选取每个<div>下第一个子元素</div></td>
 </tr>
 <tr>
-<td>maxAge</td>
-<td>cookie 多久后过期的相对时间</td>
+<td>:last-child</td>
+<td>选取每个父元素下的最后1个子元素</td>
+<td>集合元素</td>
+<td>$(“div :last-child”)选取每个<div>下最后一个子元素</div></td>
 </tr>
 <tr>
-<td>secure</td>
-<td>当 secure 值为 true 时，cookie 在 HTTP 中是无效，在 HTTPS 中才有效。</td>
-</tr>
-<tr>
-<td>httpOnly</td>
-<td>浏览器不允许脚本操作 document.cookie 去更改 cookie。一般情况下都应该设置这个为 true，这样可以避免被 xss 攻击拿到 cookie。</td>
-</tr>
-<tr>
-<td>signed</td>
-<td>是否为签名 cookie，cookie 的值会被混淆</td>
+<td>:only-child</td>
+<td>选取只有唯一子元素的元素的子元素</td>
+<td>集合元素</td>
+<td>$(“div :only-child”)选择只有一个子元素的<div>元素</div></td>
 </tr>
 </tbody>
 </table>
-<ol>
-<li><p>会话</p>
-<ul>
-<li><p>使用</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// server.js</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> credentials = <span class="built_in">require</span>(<span class="string">'./credentials.js'</span>)</div><div class="line">app.use(require('cookie-parser')(credentials.cookieSecret))   # 使用cookie</div><div class="line">app.use(require('express-session')([option]))     # 使用会话，需在 cookie-parser 之后挂载</div><div class="line"></div><div class="line"># 效果: 在浏览器的 request Cookies 中，会自动添加一个 connect.sid 来唯一标识会话</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置 express-session </p>
-</li>
-</ul>
-</li>
-</ol>
-<table>
+<h4 id="2-3-6表单过滤选择器"><a href="#2-3-6表单过滤选择器" class="headerlink" title="2.3.6表单过滤选择器"></a>2.3.6表单过滤选择器</h4><table>
 <thead>
 <tr>
-<th>属性</th>
-<th>描述</th>
+<th>选 择 器</th>
+<th>描 述</th>
+<th>返 回</th>
+<th>示 例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>key</td>
-<td>存放唯一会话的 cookie 名称。 默认为 connect.sid</td>
+<td>:enabled</td>
+<td>选取所有可用元素</td>
+<td>集合元素</td>
+<td>$(“body:enabled”)选取页面内所有可用元素</td>
 </tr>
 <tr>
-<td>store</td>
-<td>会话储存的实例，默认为一个 MemoryStore 实例</td>
+<td>:disabled</td>
+<td>选取所有不可用元素</td>
+<td>集合元素</td>
+<td>$(“body:disabled”)选取页面内所有不可用元素</td>
 </tr>
 <tr>
-<td>cookie</td>
-<td>会话 cookie 的 cookie 这种 ( path, domain, secure 等 )</td>
+<td>:checked</td>
+<td>选取所有被选中的元素(单选框、复选框)</td>
+<td>集合元素</td>
+<td>$(“input:checked”)选取所有被选中的<input>元素</td>
+</tr>
+<tr>
+<td>:selected</td>
+<td>选取所有被选中的选项元素(下拉列表)</td>
+<td>集合元素</td>
+<td>$(“select:selected”)选取所有被选中的选项元素</td>
 </tr>
 </tbody>
 </table>
+<h3 id="2-4-其他选择器"><a href="#2-4-其他选择器" class="headerlink" title="2.4. 其他选择器"></a>2.4. 其他选择器</h3><p>​   其他库拓展等（我觉得没有必要）</p>
+<h2 id="3-原生支持那些选择器"><a href="#3-原生支持那些选择器" class="headerlink" title="3. 原生支持那些选择器"></a>3. 原生支持那些选择器</h2><h3 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>*</strong></td>
+<td>通用元素选择器，匹配任何元素</td>
+</tr>
+<tr>
+<td>E</td>
+<td>标签选择器，匹配所有使用E标签的元素</td>
+</tr>
+<tr>
+<td>.info</td>
+<td>class选择器，匹配所有class属性中包含info的元</td>
+</tr>
+<tr>
+<td>#footer</td>
+<td>id选择器，匹配所有id属性等于footer的元素</td>
+</tr>
+<tr>
+<td>$(‘div, span, p.myClass’)</td>
+<td>并列选择器</td>
+</tr>
+</tbody>
+</table>
+<h3 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E F</td>
+<td>后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔</td>
+</tr>
+<tr>
+<td>E &gt; F</td>
+<td>子元素选择器，匹配所有E元素的子元素F</td>
+</tr>
+<tr>
+<td>E + F</td>
+<td>毗邻元素选择器，匹配所有紧随E元素之后的同级元素F</td>
+</tr>
+<tr>
+<td>$(“prev ~ siblings”)</td>
+<td>prev元素之后的所有 siblings 元素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><ul>
+<li><p>动态伪类选择器</p>
+<p>| 选择器       | 功能描述 |<br>| :——– | :— |<br>| E:link    | 未被访问 |<br>| E:visited | 已被访问 |<br>| E:active  |      |<br>| E:hover   |      |<br>| E:focus   |      |</p>
 <ul>
-<li><p>创建 session</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在请求对象上设置值</span></div><div class="line"></div><div class="line"># 创建一个session</div><div class="line">req.session.key = value</div><div class="line"></div><div class="line"># 创建多个session</div><div class="line">req.session = &#123;</div><div class="line">    key1: value1,</div><div class="line">    key2: value2</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>获取 session</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在请求对象上获取值</span></div><div class="line"></div><div class="line">var session = req.session      # 获取session集合</div><div class="line">var value = req.session.key    # 获取名称为key的session的值</div></pre></td></tr></table></figure>
-</li>
-<li><p>销毁 session</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">req.session.destroy()      # 清空所有session</div><div class="line">delete req.session.colorScheme   # 使用 js 的 delete 操作符</div></pre></td></tr></table></figure>
-<p>​</p>
+<li><p>目标伪类选择器</p>
+<p>| 选择器     | 功能描述                       |<br>| ——- | :————————- |<br>| :target | 用来指定那些包含片段标识符的 URI 的目标元素样式 |</p>
 </li>
 </ul>
-<h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><ol>
-<li>类型<ul>
-<li>app.use( [ url, ]  function( [err,]  req,  res,  next ) )</li>
-<li>app.get( )</li>
-<li>app.post( )</li>
-<li>app.all( )</li>
+</li>
+<li><p>语言伪类选择器 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span> = <span class="string">"zh-cmn-hans"</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">lang</span> = <span class="string">"fr"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>| 选择器              | 功能描述       |<br>| —————- | :——— |<br>| E:lang(language) | 用于多语言版本的网站 |</p>
+</li>
+<li><p>UI元素状态伪类选择器<br>| 选择器        | 功能描述 |<br>| ———- | :— |<br>| E:checked  | 选中   |<br>| E:enabled  | 启用   |<br>| E:disabled | 不可用  |</p>
+</li>
+<li><p>结构伪类选择器</p>
+<p>| 选择器                   | 功能描述                                     |<br>| ——————— | :————————————— |<br>| E:first-child         | 选择父元素的第一个子元素                             |<br>| E:last-child          | 选择父元素的最后一个子元素                            |<br>| E:root                | 匹配文档的根元素，对于HTML文档，就是HTML元素               |<br>| E:nth-child(n)        | 选择父元素下的第n个元素或奇偶元素，n的值为“数字 | odd | even” |<br>| E:nth-last-child(n)   | 匹配其父元素的倒数第n个子元素，第一个编号为1                  |<br>| E:nth-of-type(n)      | 与:nth-child()作用类似，但是仅匹配使用同种标签的元素         |<br>| E:nth-last-of-type(n) | 与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素   |<br>| E:first-of-type       | 匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)   |<br>| E:last-of-type        | 匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1) |<br>| E:only-child          | 匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1) |<br>| E:only-of-type        | 匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1) |<br>| E:empty               | 匹配一个不包含任何子元素的元素，注意，文本节点也被看作子元素           |</p>
+</li>
+<li><p>否定伪类选择器</p>
+<p>  | 选择器      | 功能描述            |<br>  | ——– | ————— |<br>  | E:not(s) | 匹配不符合当前选择器的任何元素 |</p>
+</li>
+</ul>
+<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:first-line</td>
+<td>匹配E元素的第一行</td>
+</tr>
+<tr>
+<td>E:first-letter</td>
+<td>匹配E元素的第一个字母</td>
+</tr>
+<tr>
+<td>E:before</td>
+<td>在E元素之前插入生成的内容</td>
+</tr>
+<tr>
+<td>E:after</td>
+<td>在E元素之后插入生成的内容</td>
+</tr>
+<tr>
+<td>E::selection</td>
+<td>匹配突出显示的文本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E[att]</td>
+<td>匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如”[cheacked]”。以下同。）</td>
+</tr>
+<tr>
+<td>E[att=val]</td>
+<td>匹配所有att属性等于”val”的E元素</td>
+</tr>
+<tr>
+<td>E[att~=val]</td>
+<td>匹配所有att属性具有多个空格分隔的值、其中一个值等于”val”的E元素</td>
+</tr>
+<tr>
+<td>E[att\</td>
+<td>=val]</td>
+<td>匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以”val”开头的E元素，主要用于lang属性，比如”en”、”en-us”、”en-gb”等等</td>
+</tr>
+<tr>
+<td>[attribute^=value]</td>
+<td>选取属性的值以value开始的元素</td>
+</tr>
+<tr>
+<td>[attribute$=value]</td>
+<td>选取属性的值以value结束的元素</td>
+</tr>
+<tr>
+<td>[attribute*=value]</td>
+<td>选取属性的值含有value的元素</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-获取到的元素的区别"><a href="#4-获取到的元素的区别" class="headerlink" title="4. 获取到的元素的区别"></a>4. 获取到的元素的区别</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $box = $(<span class="string">'#box'</span>)</div><div class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>)</div><div class="line"> </div><div class="line">box === $box[<span class="number">0</span>]    <span class="comment">//true</span></div><div class="line">$(box)[<span class="number">0</span>] === $box[<span class="number">0</span>]  <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h2 id="5-jQuery的DOM操作"><a href="#5-jQuery的DOM操作" class="headerlink" title="5. jQuery的DOM操作"></a>5. jQuery的DOM操作</h2><ol>
+<li><p>通过jQuery获取到DOM节点后，就可以使用jQuery提供的DOM操作方法</p>
+<ul>
+<li><p>text()</p>
+</li>
+<li><p>$(html)</p>
+</li>
+<li><p>attr( ‘background’ [ , value ] )</p>
+</li>
+<li><p>removeAttr( ‘background’ )</p>
+</li>
+<li><p>prop( )  //根据官方的建议：具有 true 和 false 两个属性的属性，如checked, selected 或者 disabled 使用prop()，其他的使用 attr()</p>
+<p><img src="http://wenzhixin.net.cn/posts/2013/05/24/attr_prop.png" alt="img"></p>
+</li>
+<li><p>removeProp( )</p>
+</li>
+<li><p>插入节点  </p>
+<ul>
+<li>append()   //在每个匹配元素<strong>内部</strong>追加内容</li>
+<li>prepend()   // 在每个匹配元素<strong>内部</strong>前置内容</li>
+<li>after()   // 在每个匹配元素之后插入内容</li>
+<li>before()  //在每个匹配元素之前插入内容</li>
+</ul>
+</li>
+<li><p>删除节点</p>
+<ul>
+<li>remove( )  //返回删除元素的引用，以后可再使用</li>
+<li>detach( )  // 返回删除元素的引用， 所有绑定的事件和附加的数据也留下来（remove没有）</li>
+<li>empty( )  //不是删除节点，而是清空节点里面的所有后代</li>
+</ul>
+</li>
+<li><p>复制节点</p>
+<ul>
+<li>clone( [ true ] )  // ture 表示是否复制元素中绑定的事件</li>
+</ul>
+</li>
+<li><p>代替节点</p>
+<ul>
+<li>replaceWith( [ HTML / DOM ] )  // 用 HTML 或 DOM 替代匹配的元素</li>
+<li>replaceAll( )  // 规则与 replaceWith 颠倒过来</li>
+</ul>
+</li>
+<li><p>包裹节点</p>
+<ul>
+<li>wrap( [ HTML ] )   //匹配的每个元素单独包裹</li>
+<li>wrapAll( [ HTML] )   // 匹配的所有元素被一起包裹</li>
+<li>wrapInner( [ HTML ] )  //包裹每个匹配的元素的子元素</li>
+</ul>
+</li>
+<li><p>样式操作</p>
+<ul>
+<li>addClass( )</li>
+<li>removeClass( )</li>
+<li>toggleClass( )</li>
+<li>hasClass( )  // 等价于 .is( ‘.className’ )</li>
+</ul>
+</li>
+<li><p>设置 HTML 、文本、值</p>
+<ul>
+<li>html( )</li>
+<li>text( )</li>
+<li>val( )   // this.defaultValue 获取文本框默认值</li>
+</ul>
+</li>
+<li><p>遍历节点</p>
+<ul>
+<li>children( )</li>
+<li>next( )</li>
+<li>prev( )</li>
+<li>siblings( ) // 前后所以同辈的</li>
+<li>closest( ) //从元素本身出发</li>
+<li>parent( )  //匹配父级元素</li>
+<li>parents( )  //匹配祖元素(多个)</li>
+</ul>
+</li>
+<li><p>CSS-DOM操作</p>
+<ul>
+<li>css(‘background’ [ , value ] )  //驼峰 barkgroundColor</li>
+<li>offset.left/top</li>
+<li>position( ).left/top   // 相对父 relaction/absolution </li>
+<li>scrollTop( )  //滚动条距离顶端的距离</li>
+<li>scropLeft( )</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-<h1 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h1><ol>
-<li>注意 HTML邮件的兼容性问题<ul>
-<li><a href="http://kb.mailchimp.com/" target="_blank" rel="external">MailChimp</a> </li>
-<li><a href="">HTML Email Bolierplate</a> </li>
+<h2 id="6-jQury中的事件和动画"><a href="#6-jQury中的事件和动画" class="headerlink" title="6. jQury中的事件和动画"></a>6. jQury中的事件和动画</h2><h3 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h3><ul>
+<li><p>bind( type [ , data ], fn )</p>
+<ul>
+<li><p>type</p>
+<p>| 鼠标事件                             | 键盘事件     | 表单事件   | 文档/窗口事件 |<br>| :——————————- | :——- | :—– | :—— |<br>| click                            | keypress | submit | load    |<br>| dblclick                         | keydown  | change | resize  |<br>| mouseenter &amp; mouseleave          | keyup    | focus  | scroll  |<br>| mousedown &amp; mouseup              |          | blur   | unload  |<br>| mousemove &amp; mouseover &amp; mouseout |          | select |         |</p>
+</li>
+<li><p>data:  作为 event.data 属性值传递给事件对象</p>
+</li>
+<li><p>function：事件处理函数</p>
+</li>
 </ul>
 </li>
-<li>​</li>
+<li><p>简写绑定事件</p>
+<ul>
+<li>click , mouseover, mouseout </li>
+</ul>
+</li>
+<li><p>合成事件</p>
+<ul>
+<li>hover( enterFn, leaveFn)  //光标移进移出元素触发</li>
+<li>toggle( fn1, fn2, fn3, …. )   //轮番调用</li>
+</ul>
+</li>
+<li><p>事件冒泡</p>
+<ul>
+<li>什么是冒泡： 从目标元素—&gt; <body></body></li>
+<li>引发的问题</li>
+</ul>
+</li>
+<li><p>事件对象 event</p>
+</li>
+<li><p>停止冒泡</p>
+<ul>
+<li>event.stopPropagation( )</li>
+</ul>
+</li>
+<li><p>阻止默认事件</p>
+<ul>
+<li>enent.preventDefault( )</li>
+</ul>
+</li>
+<li><p>事件捕获</p>
+<ul>
+<li>未封装</li>
+</ul>
+</li>
+<li><p>event</p>
+<ul>
+<li>type  // ‘click’</li>
+<li>target  //触发事件的元素</li>
+<li>relatedTarget   //mouseover 和 mouseout</li>
+<li>pageX 和 pageY   //光标相对于页面的x坐标和y坐标</li>
+<li>which   //鼠标左、中、右键 ， 键盘按键</li>
+<li>metaKey  //  <ctrl>按键</ctrl></li>
+</ul>
+</li>
+<li><p>移出事件</p>
+<ul>
+<li>unbind( [ ‘type’,  fn ] ) </li>
+<li>one( ‘type’ [,data ], fn )</li>
+</ul>
+</li>
+<li><p>模拟操作</p>
+<ul>
+<li>click( )</li>
+<li>trigger(‘myClick’, [data1,  data2] )</li>
+</ul>
+</li>
+<li><p>绑定多个事件</p>
+<ul>
+<li>bind( ‘mouseover, mouseout ‘, funtion( ){  })</li>
+</ul>
+</li>
+<li><p>添加事件空间</p>
+<h3 id="2-动画"><a href="#2-动画" class="headerlink" title="2. 动画"></a>2. 动画</h3></li>
+<li><p>show( [num] ) &amp; hide( [num] )  //display</p>
+</li>
+<li><p>fadeIn( ) &amp; fadeOut( )   //透明度</p>
+</li>
+<li><p>slideUp( ) &amp; slideDown( )  //高度</p>
+</li>
+<li><p>animate( params, speed, callback )</p>
+<ul>
+<li><p>简单动画</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="keyword">this</span>).animate(&#123;<span class="attr">left</span>: <span class="string">"500px"</span>&#125;, <span class="number">3000</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>累加，累减动</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="keyword">this</span>).animate(&#123;<span class="attr">left</span>: <span class="string">"+=500px"</span>&#125;, <span class="number">3000</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>多重动画</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="keyword">this</span>).animate(&#123;<span class="attr">left</span>: <span class="string">"500px"</span>, <span class="attr">height</span>: <span class="string">"200px"</span>&#125;, <span class="number">3000</span>)   <span class="comment">//同时发生</span></div><div class="line"></div><div class="line">$(<span class="keyword">this</span>).animate(&#123;<span class="attr">left</span>: <span class="string">"500px"</span>&#125;,<span class="number">3000</span>).animate(&#123;<span class="attr">height</span>: <span class="string">"200px"</span>&#125;,<span class="number">3000</span>)    <span class="comment">//顺序发生</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>综合动画</p>
+<ul>
+<li>通过链式把各种效果加进来</li>
+</ul>
+</li>
+<li><p>动画回调函数</p>
+</li>
+<li><p>stop( [ true, true ] )   </p>
+<ul>
+<li>默认结束当前动画</li>
+<li>第一个true清空当前未执行的动画队列</li>
+<li>第二个true让当前动画直接到达结束状态</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-jQuery-与-Ajax-的应用"><a href="#7-jQuery-与-Ajax-的应用" class="headerlink" title="7. jQuery 与 Ajax 的应用"></a>7. jQuery 与 Ajax 的应用</h2><ol>
+<li>load( )    //加载HTML</li>
+<li>\$.get( )  &amp;  $.post( )        // <strong>content-Type : x-www-form-urlencoded</strong><ul>
+<li>$get( url [ , data ]  [ , callback]  [ , type ] )           </li>
+<li>callback : function( data, textStatus )   //success才调用</li>
+<li>type: 服务器返回内容的格式   // json</li>
+<li>$post( url [ , data ]  [ , callback]  [ , type ] ) </li>
+</ul>
+</li>
+<li>$getStript( src [ , callback ] )</li>
+<li>$getJSON( src [ , callback ] )</li>
+<li>$ajax( )</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th>async</th>
+<th>布尔值，表示请求是否异步处理。默认是 true。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beforeSend(<em>xhr</em>)</td>
+<td>发送请求前运行的函数。</td>
+</tr>
+<tr>
+<td>cache</td>
+<td>布尔值，表示浏览器是否缓存被请求页面。默认是 true。</td>
+</tr>
+<tr>
+<td><strong>complete</strong>(<em>xhr,status</em>)</td>
+<td>请求完成时运行的函数（在请求成功或失败之后均调用，即在 success 和 error 函数之后）。</td>
+</tr>
+<tr>
+<td><strong>contentType</strong></td>
+<td>发送数据到服务器时所使用的内容类型。默认是：”application/x-www-form-urlencoded”。</td>
+</tr>
+<tr>
+<td>context</td>
+<td>为所有 AJAX 相关的回调函数规定 “this” 值。</td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td>规定要发送到服务器的数据。</td>
+</tr>
+<tr>
+<td>dataFilter(<em>data</em>,<em>type</em>)</td>
+<td>用于处理 XMLHttpRequest 原始响应数据的函数。</td>
+</tr>
+<tr>
+<td><strong>dataType</strong></td>
+<td>预期的服务器响应的数据类型。</td>
+</tr>
+<tr>
+<td><strong>error</strong>(<em>xhr,status,error</em>)</td>
+<td>如果请求失败要运行的函数。</td>
+</tr>
+<tr>
+<td>global</td>
+<td>布尔值，规定是否为请求触发全局 AJAX 事件处理程序。默认是 true。</td>
+</tr>
+<tr>
+<td>ifModified</td>
+<td>布尔值，规定是否仅在最后一次请求以来响应发生改变时才请求成功。默认是 false。</td>
+</tr>
+<tr>
+<td>jsonp</td>
+<td>在一个 jsonp 中重写回调函数的字符串。</td>
+</tr>
+<tr>
+<td>jsonpCallback</td>
+<td>在一个 jsonp 中规定回调函数的名称。</td>
+</tr>
+<tr>
+<td>password</td>
+<td>规定在 HTTP 访问认证请求中使用的密码。</td>
+</tr>
+<tr>
+<td><strong>processData</strong></td>
+<td>布尔值，规定通过请求发送的数据是否转换为查询字符串。默认是 true。</td>
+</tr>
+<tr>
+<td>scriptCharset</td>
+<td>规定请求的字符集。</td>
+</tr>
+<tr>
+<td><strong>success</strong>(<em>result,status,xhr</em>)</td>
+<td>当请求成功时运行的函数。</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>设置本地的请求超时时间（以毫秒计）。</td>
+</tr>
+<tr>
+<td>traditional</td>
+<td>布尔值，规定是否使用参数序列化的传统样式。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>规定请求的类型（GET 或 POST）。</td>
+</tr>
+<tr>
+<td><strong>url</strong></td>
+<td>规定发送请求的 URL。默认是当前页面。</td>
+</tr>
+<tr>
+<td>username</td>
+<td>规定在 HTTP 访问认证请求中使用的用户名。</td>
+</tr>
+<tr>
+<td>xhr</td>
+<td>用于创建 XMLHttpRequest 对象的函数。</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 上传文件</span></div><div class="line">$.ajax(&#123;</div><div class="line">    url:<span class="string">"../UploadPhoto?albumId="</span>+albumId,</div><div class="line">    type:<span class="string">"POST"</span>,</div><div class="line">    data:formData,</div><div class="line">    cache: <span class="literal">false</span>,   <span class="comment">//非必需，是否从浏览器缓存中加载请求信息</span></div><div class="line">    processData: <span class="literal">false</span>,      <span class="comment">//必须</span></div><div class="line">    contentType: <span class="literal">false</span>,      <span class="comment">//必须</span></div><div class="line">    success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(data)</div><div class="line">    &#125;,</div><div class="line">    dataType:<span class="string">"json"</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//上传json数据</span></div><div class="line">$.ajax(&#123;</div><div class="line">    type: <span class="string">"POST"</span>,</div><div class="line">    url: <span class="string">"/anywork/user/verification"</span>,</div><div class="line">    contentType: <span class="string">"application/json; charset=utf-8"</span>,</div><div class="line">    data: <span class="built_in">JSON</span>.stringify(info),</div><div class="line">    dataType: <span class="string">"json"</span>,</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(data)</div><div class="line">    &#125;,</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//同步发送请求</span></div><div class="line">$.ajax(&#123;</div><div class="line">    type:<span class="string">"POST"</span>,</div><div class="line">    url:<span class="string">"/anywork/test/textpaper/submit"</span>,</div><div class="line">    contentType: <span class="string">"application/json; charset=utf-8"</span>,</div><div class="line">    data: <span class="built_in">JSON</span>.stringify(info),</div><div class="line">    dataType: <span class="string">"json"</span>,</div><div class="line">    <span class="keyword">async</span>: <span class="literal">false</span>,</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(data)</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"> <span class="string">'content-type'</span>: <span class="string">'multipart/form-data</span></div></pre></td></tr></table></figure>
+<h2 id="6-Zepto"><a href="#6-Zepto" class="headerlink" title="6.Zepto"></a>6.Zepto</h2><hr>
+<p>选择器相关链接</p>
+<p><a href="http://www.cnblogs.com/artwl/archive/2012/02/07/2342088.html" target="_blank" rel="external">http://www.cnblogs.com/artwl/archive/2012/02/07/2342088.html</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2009/03/css_selectors.html</a></p>
+<p><a href="http://www.jianshu.com/p/b2f18be3e22d" target="_blank" rel="external">http://www.jianshu.com/p/b2f18be3e22d</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_the_:target_selector" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_the_:target_selector</a></p>
+<p><a href="http://www.cnblogs.com/keepfool/archive/2012/06/02/2532203.html" target="_blank" rel="external">http://www.cnblogs.com/keepfool/archive/2012/06/02/2532203.html</a> </p>
+<p><a href="http://youmightnotneedjquery.com/" target="_blank" rel="external">YOU MIGHT NOT NEED JQUERY</a></p>
+<p><a href="https://github.com/oneuijs/You-Dont-Need-jQuery/blob/master/README.zh-CN.md" target="_blank" rel="external">You-Dont-Need-jQuery</a></p>
 <hr>
-<p><strong> 声明：</strong><br>文章标题：<a href="https://ccczss.github.io/2017/09/29/Nodejs学习笔记/#more" target="_blank" rel="external">Nodejs学习笔记</a><br>文章作者：Czs<br>文章链接：<a href="https://ccczss.github.io/2017/09/29/Nodejs学习笔记/#more" target="_blank" rel="external">https://ccczss.github.io/2017/09/29/Nodejs学习笔记/#more</a><br>文章版权属本博主所有，有问题或者建议欢迎在下方评论。欢迎转载、引用，但请标明作者和原文地址，谢谢。</p>
+<p><strong> 声明：</strong><br>文章标题：<a href="https://ccczss.github.io/2017/09/30/jQuery学习/" target="_blank" rel="external">jQuery学习</a><br>文章作者：Czs<br>文章链接：<a href="https://ccczss.github.io/2017/09/30/jQuery学习/" target="_blank" rel="external">https://ccczss.github.io/2017/09/30/jQuery学习/</a><br>文章版权属本博主所有，有问题或者建议欢迎在下方评论。欢迎转载、引用，但请标明作者和原文地址，谢谢。</p>
 
       
 
@@ -648,17 +1022,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -709,7 +1072,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/29/Nodejs学习笔记/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/30/jQuery学习/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -723,18 +1086,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/30/git使用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/30/vuex使用/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          git使用
+          vuex使用
         
       </div>
     </a>
   
   
-    <a href="/2017/09/29/DIV编辑输入与换行/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">编辑显示与输入</div>
+    <a href="/2017/09/30/git使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git使用</div>
       <i class="icon-circle-right"></i>
     </a>
   

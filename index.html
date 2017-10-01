@@ -154,29 +154,31 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Nodejs学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-前后交互" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/Nodejs学习笔记/">Nodejs学习笔记</a>
+      <a class="article-title" href="/2017/10/01/前后交互/">前后交互</a>
     </h1>
   
 
         
-        <a href="/2017/09/29/Nodejs学习笔记/" class="archive-article-date">
-  	<time datetime="2017-09-29T15:13:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+        <a href="/2017/10/01/前后交互/" class="archive-article-date">
+  	<time datetime="2017-10-01T08:28:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line">app.set(<span class="string">'port'</span>, process.env.PORT || <span class="number">3000</span>)</div><div class="line"></div><div class="line">app.get(<span class="string">'URL'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    res.type(<span class="string">'xxx'</span>)</div><div class="line">    res.send(<span class="string">'xxx'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>)</span>&#123;</div><div class="line">    res.status(<span class="number">404</span>)</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="一、-JQ篇"><a href="#一、-JQ篇" class="headerlink" title="一、 JQ篇"></a>一、 JQ篇</h1><ol>
+<li>传 josn 数据  </li>
+</ol>
         
-          <a class="article-more-a" href="/2017/09/29/Nodejs学习笔记/#more">more >></a>
+          <a class="article-more-a" href="/2017/10/01/前后交互/#more">more >></a>
         
       
 
@@ -185,22 +187,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/29/Nodejs学习笔记/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/01/前后交互/">展开全文 >></a>
         </p>
       
 
@@ -230,36 +221,29 @@
 
 
   
-    <article id="post-DIV编辑输入与换行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-让有道云支持Markdown截图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/DIV编辑输入与换行/">编辑显示与输入</a>
+      <a class="article-title" href="/2017/10/01/让有道云支持Markdown截图/">让有道云支持Markdown截图</a>
     </h1>
   
 
         
-        <a href="/2017/09/29/DIV编辑输入与换行/" class="archive-article-date">
-  	<time datetime="2017-09-29T08:56:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+        <a href="/2017/10/01/让有道云支持Markdown截图/" class="archive-article-date">
+  	<time datetime="2017-10-01T08:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="编辑显示与输入"><a href="#编辑显示与输入" class="headerlink" title="编辑显示与输入"></a>编辑显示与输入</h1><ol>
-<li>显示</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">white-space</span>: pre-wrap <span class="comment">/*使该div能显示换行符: ↵ , 并且自动换行*/</span></div><div class="line">  word-wrap: break-word;</div><div class="line">  <span class="attribute">word-break</span>: break-all;    <span class="comment">/*强制英语单词换行*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>输入</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span> &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!-- 使改div能编辑，并且编辑的时候能 换行 和 高度自增 --&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">	通过 e.target.innerHTML 获取的是把换行符替代成 &lt;div&gt; 标签的 html 代码</span></div><div class="line"><span class="comment">	通过 e.target.innerText 获取的是把换行符替代成 ↵ 符号的文本</span></div><div class="line"><span class="comment"> --&gt;</span></div></pre></td></tr></table></figure>
+        <h1 id="征服有道云Markdown-截图（第一篇）"><a href="#征服有道云Markdown-截图（第一篇）" class="headerlink" title="征服有道云Markdown 截图（第一篇）"></a>征服有道云Markdown 截图（第一篇）</h1><h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><p>将剪贴板的图片转化为 base64码 插入到笔记中 </p>
         
-          <a class="article-more-a" href="/2017/09/29/DIV编辑输入与换行/#more">more >></a>
+          <a class="article-more-a" href="/2017/10/01/让有道云支持Markdown截图/#more">more >></a>
         
       
 
@@ -268,30 +252,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/29/DIV编辑输入与换行/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/01/让有道云支持Markdown截图/">展开全文 >></a>
         </p>
       
 
@@ -321,6 +286,566 @@
 
 
   
+    <article id="post-原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/原型链/">原型链</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/原型链/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:52:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="原型链理解"><a href="#原型链理解" class="headerlink" title="原型链理解"></a>原型链理解</h1>
+        
+          <a class="article-more-a" href="/2017/09/30/原型链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/原型链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-文件、文本技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/文件、文本技巧/">文件、文本技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/文件、文本技巧/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-动态生成-input-type-’file’"><a href="#1-动态生成-input-type-’file’" class="headerlink" title="1. 动态生成 input type=’file’"></a>1. 动态生成 input type=’file’</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> el = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);</div><div class="line">    el.setAttribute(<span class="string">'type'</span>, <span class="string">'file'</span>)</div><div class="line">    el.setAttribute(<span class="string">'class'</span>, <span class="string">'file-input'</span>)</div><div class="line">    el.onchange = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(el.files)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 需要先将其插入到文档中，否则 IE10- 不能触发点击事件</span></div><div class="line">    <span class="built_in">document</span>.body.appendChild(el)</div><div class="line">    el.click()</div><div class="line">  </div><div class="line">    <span class="comment">// 使用完成后将其删除</span></div><div class="line">    el.parentNode.removeChild(el);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bt = <span class="built_in">document</span>.getElementById(<span class="string">'bt'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 使用 onclick 添加事件，可以兼容 IE</span></div><div class="line">bt.onclick=handel</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/09/30/文件、文本技巧/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/文件、文本技巧/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/CSS3学习/">CSS3学习</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/CSS3学习/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:51:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS3-选择器"><a href="#CSS3-选择器" class="headerlink" title="CSS3 选择器"></a>CSS3 选择器</h1><p><img src="http://ougnqxz83.bkt.clouddn.com/17-9-7/26408093.jpg" alt=""></p>
+        
+          <a class="article-more-a" href="/2017/09/30/CSS3学习/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/CSS3学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Javascript设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/Javascript设计模式/">Javascript设计模式</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/Javascript设计模式/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript的灵活性"><a href="#JavaScript的灵活性" class="headerlink" title="JavaScript的灵活性"></a>JavaScript的灵活性</h1><ol>
+<li><ul>
+<li>普通 functon</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">startAnimation</span>(<span class="params"></span>) </span>&#123;...&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopAnimation</span>(<span class="params"></span>) </span>&#123;...&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2017/09/30/Javascript设计模式/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/Javascript设计模式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-跨域总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/跨域总结/">跨域总结</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/跨域总结/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:50:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、后台跨域-（CORS）"><a href="#一、后台跨域-（CORS）" class="headerlink" title="一、后台跨域 （CORS）"></a>一、后台跨域 （CORS）</h1><h3 id="1-后台设置"><a href="#1-后台设置" class="headerlink" title="1. 后台设置"></a>1. 后台设置</h3><ol>
+<li><p>配置过滤器，为所有的响应头都加上 下面四中字段</p>
+<ul>
+<li><p>Access-Control-Allow-Origin: ‘*’ ：允许通过跨域访问后台服务器的源，</p>
+<blockquote>
+<p>如果需要使用section来标示不同的会话，则需要前端设置允许cookie（因为浏览器是通过发送cookie中相关的ID ( JSESSIONID )来标识的），并且后台的 Access-Control-Allow-Origin 不可以设置为通配符 ‘ * ’，需要指定一个明确的域名，可以是 null (即通过本地文件  file:// 发送的请求)， 然后后台动态的获取request 的 origin 去设置  Access-Control-Allow-Origin </p>
+</blockquote>
+</li>
+<li><p>Access-Control-Allow-Methods: “POST, …” ：该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法</p>
+</li>
+<li><p>Access-Control-Allow-Headers: “Content-Type, …”：该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段</p>
+</li>
+<li><p>Access-Control-Max-Age: ‘3600’：规定在多长时间内不需要再发生 <strong>预检请求</strong> 就能跨域访问</p>
+</li>
+</ul>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2017/09/30/跨域总结/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/跨域总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-改造vue-cli" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/改造vue-cli/">改造vue-cli</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/改造vue-cli/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:49:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="配置-loader-和-依赖项"><a href="#配置-loader-和-依赖项" class="headerlink" title="配置 loader 和 依赖项"></a>配置 loader 和 依赖项</h1><h2 id="1-引入-less"><a href="#1-引入-less" class="headerlink" title="1. 引入 less"></a>1. 引入 less</h2><ul>
+<li><p>npm 下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> cnpm install less less-loader --save-dev</div></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/09/30/改造vue-cli/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/改造vue-cli/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vuex使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/vuex使用/">vuex使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/vuex使用/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:49:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
+<li>index.js</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// store/index.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> user <span class="keyword">from</span> <span class="string">'./modules/user'</span></div><div class="line"><span class="keyword">import</span> organization <span class="keyword">from</span> <span class="string">'./modules/organization'</span></div><div class="line"></div><div class="line">Vue.use(Vuex)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">    modules: &#123;</div><div class="line">        user,</div><div class="line">        organization</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/09/30/vuex使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/vuex使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-jQuery学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/30/jQuery学习/">jQuery学习</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/30/jQuery学习/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h2><h3 id="1-jQuery-简介"><a href="#1-jQuery-简介" class="headerlink" title="1. jQuery 简介"></a>1. jQuery 简介</h3><ul>
+<li>jQuery 是一个 JavaScript 库。</li>
+<li>jQuery 极大地简化了 JavaScript 编程。（选择器，DOM，事件处理，Ajax，兼容性，链式操作，插件等 ）</li>
+<li>jQuery 很容易学习 。</li>
+<li>jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, （1.9版本 包括Internet Explorer 6 7 8）</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/09/30/jQuery学习/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/30/jQuery学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
