@@ -9,13 +9,14 @@
   <title>让有道云支持Markdown截图 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="征服有道云Markdown 截图（第一篇）原理：将剪贴板的图片转化为 base64码 插入到笔记中">
+<meta name="keywords" content="js,nodejs,截图,七牛云,Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="让有道云支持Markdown截图">
 <meta property="og:url" content="http://yoursite.com/2017/10/01/让有道云支持Markdown截图/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="征服有道云Markdown 截图（第一篇）原理：将剪贴板的图片转化为 base64码 插入到笔记中">
 <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAtCAYAAAADfVPBAAANkElEQVRoBe2ZeXAU153HP909lzS6kYSENFwSAgRCXKYMS2xjMCbYiWNib/KHtzZZL7Errl27apdabzmVjRNvgl1O/lh243XWiY9srR1iB2wDtrMVIBgQYB3cpwRIo/saXaOZ0Ux3b/2eNCOBZFvgpCpx7VO1pl/3636/7/td3/drbeWPu20+J03/nOBQMD5XYBwfp5klhQ4eXpnEnFyDVLf2ccP+KNf7IzaX2k1+XhGipjE26Tm0iXxGQDy80jPpl/wxB/68IqxATWaOcWY2rJE/DSACQBZVZJpMGwfmb1clTea5SY2xbZv4YVkWckj/RttkZRoHuTjHuNG5PnW8ANC0m/e7yco0DswNO/v1Cz1G5jgI0Yg0AaTr44zhUxdjsjKNA/Opb75ugAhsmebwVTnXIBKJcObMaS5cugC2jaE7CHT3UF/fwOyiItauvZOCgml4PB5ldgJSDnmXYdy8ZfxBwERjUbXilmVz+PBhTp0+xcqVt7Lp/q+gyZ9mEIuZ9Pb18+vtb/HAAw+yevUqnnrqKfLy8hLLIxr8LGBuXOeJqUeUoYGla3QEuvnv1/8HzdDYvHkz5YvK8biTcHuScHo8ONxusnJyeOzvH+PlV17m7NmzrF27lh07dhAMBlVw+CxARJqbAiPmEI1GMU1THVcuX+Gjjz7ijjvuYNWqv8DtdqMbBpq8XtOxbBvdIX2bWDjEooUL2L59O6tXr+bpp59m9+7diah33VrdUPemwQiQoaEhOtvaqa+tY2aBj1+//gbRSEQJoMBoBrYtZqbT19PD5bNneeuV12iub1D+smXLFubNm8e2bdu4fPny">
-<meta property="og:updated_time" content="2017-10-01T08:23:37.932Z">
+<meta property="og:updated_time" content="2017-10-01T11:44:20.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让有道云支持Markdown截图">
 <meta name="twitter:description" content="征服有道云Markdown 截图（第一篇）原理：将剪贴板的图片转化为 base64码 插入到笔记中">
@@ -251,6 +252,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">截图</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">七牛云</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -473,6 +501,22 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
@@ -486,6 +530,42 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原型链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">七牛云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
             
             <div class="clearfix"></div>
@@ -534,41 +614,13 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-friends" q-show="friends">
   		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
     	</section>
     
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">它只是个前端小白&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">它只是个前端小白</div>
   	  	
     	</section>
     
