@@ -154,37 +154,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Bus and Vuex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-改造vue-cli" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/30/Bus and Vuex/">Bus and Vuex</a>
+      <a class="article-title" href="/2017/09/30/改造vue-cli/">改造vue-cli</a>
     </h1>
   
 
         
-        <a href="/2017/09/30/Bus and Vuex/" class="archive-article-date">
-  	<time datetime="2017-09-30T15:49:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
+        <a href="/2017/09/30/改造vue-cli/" class="archive-article-date">
+  	<time datetime="2017-09-30T15:49:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Bus"><a href="#Bus" class="headerlink" title="Bus"></a>Bus</h1><ol>
-<li>在 main.js 里面</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> bus = <span class="keyword">new</span> Vue()</div><div class="line">Vue.prototype.$bus = bus</div><div class="line"></div><div class="line">...</div></pre></td></tr></table></figure>
-<p>将 bus 从 Vue对象中注入，所以在所有的vue实例中都能通过<figure class="highlight plain"><figcaption><span>访问到 Bus  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> 配合:</div><div class="line"> </div><div class="line">```javascript</div><div class="line">    // 除出事件</div><div class="line">    this.$bus.$emit(&apos;my-event&apos;, this.data)</div><div class="line">    // 监听事件</div><div class="line">    this.$bus.$on(&apos;my-event&apos;, this.handleFunction)</div><div class="line">    // 取消事件</div><div class="line">    this.$bus.$off(&apos;my-event&apos;, this.handleFunction)</div><div class="line">    </div><div class="line">    </div><div class="line">    // 实际使用场景，在需要监听事件的组件中 在 created监听，在beforeDestroy中取消</div><div class="line">    created ()&#123;</div><div class="line">        this.$bus.$on(&apos;switch-change&apos;, this.switchChange)</div><div class="line">    &#125;,</div><div class="line">    beforeDestroy () &#123;</div><div class="line">        this.$bus.$off(&apos;switch-change&apos;, this.switchChange)</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
-<h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
-<li>index.js</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// store/index.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> user <span class="keyword">from</span> <span class="string">'./modules/user'</span></div><div class="line"><span class="keyword">import</span> organization <span class="keyword">from</span> <span class="string">'./modules/organization'</span></div><div class="line"></div><div class="line">Vue.use(Vuex)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">    modules: &#123;</div><div class="line">        user,</div><div class="line">        organization</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+        <h1 id="配置-loader-和-依赖项"><a href="#配置-loader-和-依赖项" class="headerlink" title="配置 loader 和 依赖项"></a>配置 loader 和 依赖项</h1><h2 id="1-引入-less"><a href="#1-引入-less" class="headerlink" title="1. 引入 less"></a>1. 引入 less</h2><ul>
+<li><p>npm 下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> cnpm install less less-loader --save-dev</div></pre></td></tr></table></figure>
+</li>
+</ul>
         
-          <a class="article-more-a" href="/2017/09/30/Bus and Vuex/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/30/改造vue-cli/#more">more >></a>
         
       
 
@@ -198,10 +194,6 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">vuex</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
@@ -212,7 +204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/30/Bus and Vuex/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/30/改造vue-cli/">展开全文 >></a>
         </p>
       
 
@@ -686,31 +678,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,7 +690,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">transform</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,10 +727,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">transform</a>
               </li>
              
               <li class="article-tag-list-item">
