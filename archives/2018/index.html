@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>文件、文本技巧 | Hexo</title>
+  <title>Archives: 2018 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 动态生成 input type=’file’">
-<meta name="keywords" content="js">
-<meta property="og:type" content="article">
-<meta property="og:title" content="文件、文本技巧">
-<meta property="og:url" content="http://yoursite.com/2017/09/30/文件、文本技巧/index.html">
+  <meta name="description" content="大菜头的博客笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 动态生成 input type=’file’">
-<meta property="og:updated_time" content="2018-02-28T14:08:06.847Z">
+<meta property="og:description" content="大菜头的博客笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文件、文本技巧">
-<meta name="twitter:description" content="1. 动态生成 input type=’file’">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="大菜头的博客笔记">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,192 +152,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-文件、文本技巧" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      文件、文本技巧
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/02/28/nodejs命令学习/" class="archive-article-date">
+  	<time datetime="2018-02-28T13:56:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/02/28/nodejs命令学习/">nodejs命令学习</a>
     </h1>
   
 
-        
-        <a href="/2017/09/30/文件、文本技巧/" class="archive-article-date">
-  	<time datetime="2017-09-30T15:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-动态生成-input-type-’file’"><a href="#1-动态生成-input-type-’file’" class="headerlink" title="1. 动态生成 input type=’file’"></a>1. 动态生成 input type=’file’</h3><a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="built_in">document</span>.getElementById(<span class="string">'$$$$$$$$'</span>))&#123;</div><div class="line">            <span class="keyword">var</span> input = <span class="built_in">document</span>.getElementById(<span class="string">'$$$$$$$$'</span>)</div><div class="line">            input.parentNode.removeChild(input);      <span class="comment">// 移除 input元素</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> inputFile = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);</div><div class="line">        inputFile.setAttribute(<span class="string">'type'</span>, <span class="string">'file'</span>)</div><div class="line">        inputFile.setAttribute(<span class="string">'id'</span>, <span class="string">"$$$$$$$$"</span>)</div><div class="line">        inputFile.style.display = <span class="string">"none"</span></div><div class="line">        inputFile.style.position = <span class="string">"absolute"</span></div><div class="line">        inputFile.onchange = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">          	inputFile.parentNode.removeChild(inputFile)   <span class="comment">// 移除 input元素</span></div><div class="line">            event = EventUtil.getEvent(event)</div><div class="line">            <span class="keyword">var</span> fileList = event.files;</div><div class="line">    	  	<span class="keyword">if</span>(fileList.length&gt;<span class="number">0</span>)&#123;</div><div class="line">	            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;fileList.length;i++)&#123;</div><div class="line">	                <span class="keyword">if</span>(fileList[i].type.indexOf(<span class="string">'image'</span>)==<span class="number">-1</span>)&#123;</div><div class="line">	                    alert(<span class="string">"文件: 《"</span>+ fileList[i].name +<span class="string">"》 不是图片文件！"</span>);</div><div class="line">	                    <span class="keyword">continue</span>;</div><div class="line">	                &#125;</div><div class="line">                  	<span class="comment">// 图片预览处理</span></div><div class="line">	        	    addPhoto(fileList[i])	</div><div class="line">	            &#125;</div><div class="line">	        &#125;</div><div class="line">        &#125;</div><div class="line">    </div><div class="line">        <span class="comment">// 需要先将其插入到文档中，否则 IE10- 不能触发点击事件</span></div><div class="line">        <span class="built_in">document</span>.body.appendChild(inputFile)</div><div class="line">        inputFile.click()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addPhoto</span>(<span class="params">file</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</div><div class="line">    reader.onload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> dataURL = reader.result;</div><div class="line">        <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</div><div class="line">        img.src = dataURL</div><div class="line">        <span class="built_in">document</span>.body.appendChild(img)</div><div class="line">    &#125;</div><div class="line">    reader.readAsDataURL(file);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bt = <span class="built_in">document</span>.getElementById(<span class="string">'bt'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 使用 onclick 添加事件，可以兼容 IE</span></div><div class="line">bt.onclick=handel</div></pre></td></tr></table></figure>
-<ol>
-<li>缺陷<ul>
-<li>无法兼容到 IE9 及 IE9 以下，因为 IE9 不支持 H5 的 File API，故不能通过 el.files 获取文件</li>
-</ul>
-</li>
-<li>优点<ul>
-<li>使用动态的方式生成 input file 元素并在使用完后删除掉，可以避免选择的文件因为上一次已经被选择了而不再触发 change 事件</li>
-</ul>
-</li>
-</ol>
-<h3 id="2-对文本选择的操控"><a href="#2-对文本选择的操控" class="headerlink" title="2. 对文本选择的操控"></a>2. 对文本选择的操控</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addPad</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> num = <span class="built_in">Number</span>(pads.length) + <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> text=<span class="string">'(___'</span>+num+<span class="string">'___)'</span>;</div><div class="line">    pads.push(&#123;</div><div class="line">        text: <span class="string">''</span></div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    <span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">'textarea'</span>)</div><div class="line">    <span class="keyword">if</span> (obj.selectionStart || obj.selectionStart == <span class="string">'0'</span>)&#123;</div><div class="line">        <span class="keyword">var</span> startPos = obj.selectionStart;</div><div class="line">        <span class="keyword">var</span> endPos = obj.selectionEnd;</div><div class="line">        <span class="built_in">console</span>.log(startPos, endPos)</div><div class="line">        pads[num<span class="number">-1</span>].text = obj.value.substring(startPos,endPos);</div><div class="line">        content = (obj.value.substring(<span class="number">0</span>, startPos) + text + obj.value.substring(endPos, obj.value.length));</div><div class="line">        obj.selectionStart = startPos + text.length;</div><div class="line">        obj.selectionEnd = startPos + text.length;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        content += text;</div><div class="line">    &#125;</div><div class="line">    obj.focus();</div><div class="line">    obj.setSelectionRange(content.length,content.length)  <span class="comment">// 光标移到末尾</span></div><div class="line"></div><div class="line">    obj.value = content</div><div class="line">    <span class="built_in">console</span>.log(pads)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="3-复制内容到剪贴板"><a href="#3-复制内容到剪贴板" class="headerlink" title="3. 复制内容到剪贴板"></a>3. 复制内容到剪贴板</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">	<span class="selector-id">#demo</span> &#123;</span></div><div class="line"><span class="undefined">		position: absolute;</span></div><div class="line"><span class="undefined">		left: -1000px;</span></div><div class="line"><span class="undefined">	&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">value</span>=<span class="string">"abbbaaa"</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"复制"</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">'demo'</span>);  </span></div><div class="line"><span class="undefined">        obj.select();</span></div><div class="line"><span class="javascript">        <span class="built_in">document</span>.execCommand(<span class="string">"Copy"</span>);</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<hr>
-<p><strong> 声明：</strong></p>
-<p>文章作者：Czs<br>转载、引用，但请标明作者和原文地址</p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/30/文件、文本技巧/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/09/30/原型链/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          原型链
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/09/30/CSS3学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS3学习</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -362,8 +217,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>跨域总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] 一、后台跨域 （CORS）1. 后台设置 配置过滤器，为所有的响应头都加上 下面四中字段  Access-Control-Allow-Origin: ‘*’ ：允许通过跨域访问后台服务器的源，  如果需要使用section来标示不同的会话，则需要前端设置允许cookie（因为浏览器是通过发送cookie中相关的ID ( JSESSIONID )来标识的），并且后台的 Access-Co">
+  <meta name="description" content="一、后台跨域-V1（CORS）">
 <meta name="keywords" content="交互,跨域,CORS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨域总结">
 <meta property="og:url" content="http://yoursite.com/2017/09/30/跨域总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[TOC] 一、后台跨域 （CORS）1. 后台设置 配置过滤器，为所有的响应头都加上 下面四中字段  Access-Control-Allow-Origin: ‘*’ ：允许通过跨域访问后台服务器的源，  如果需要使用section来标示不同的会话，则需要前端设置允许cookie（因为浏览器是通过发送cookie中相关的ID ( JSESSIONID )来标识的），并且后台的 Access-Co">
-<meta property="og:updated_time" content="2017-10-01T11:45:09.453Z">
+<meta property="og:description" content="一、后台跨域-V1（CORS）">
+<meta property="og:updated_time" content="2018-02-28T14:07:16.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域总结">
-<meta name="twitter:description" content="[TOC] 一、后台跨域 （CORS）1. 后台设置 配置过滤器，为所有的响应头都加上 下面四中字段  Access-Control-Allow-Origin: ‘*’ ：允许通过跨域访问后台服务器的源，  如果需要使用section来标示不同的会话，则需要前端设置允许cookie（因为浏览器是通过发送cookie中相关的ID ( JSESSIONID )来标识的），并且后台的 Access-Co">
+<meta name="twitter:description" content="一、后台跨域-V1（CORS）">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -174,13 +174,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、后台跨域-（CORS）"><a href="#一、后台跨域-（CORS）" class="headerlink" title="一、后台跨域 （CORS）"></a>一、后台跨域 （CORS）</h1><h3 id="1-后台设置"><a href="#1-后台设置" class="headerlink" title="1. 后台设置"></a>1. 后台设置</h3><ol>
-<li><p>配置过滤器，为所有的响应头都加上 下面四中字段</p>
+        <h1 id="一、后台跨域-V1（CORS）"><a href="#一、后台跨域-V1（CORS）" class="headerlink" title="一、后台跨域-V1（CORS）"></a>一、后台跨域-V1（CORS）</h1><a id="more"></a>
+<h2 id="1-后台设置"><a href="#1-后台设置" class="headerlink" title="1. 后台设置"></a>1. 后台设置</h2><ol>
+<li><p>配置过滤器，为所有的响应头都加上 下面四个字段</p>
 <ul>
-<li><p>Access-Control-Allow-Origin: ‘*’ ：允许通过跨域访问后台服务器的源，</p>
+<li><p>Access-Control-Allow-Origin: ‘<strong><em>具体源</em></strong>‘ ：允许通过跨域访问后台服务器的源，</p>
 <blockquote>
-<p>如果需要使用section来标示不同的会话，则需要前端设置允许cookie（因为浏览器是通过发送cookie中相关的ID ( JSESSIONID )来标识的），并且后台的 Access-Control-Allow-Origin 不可以设置为通配符 ‘ * ’，需要指定一个明确的域名，可以是 null (即通过本地文件  file:// 发送的请求)， 然后后台动态的获取request 的 origin 去设置  Access-Control-Allow-Origin </p>
+<p><strong>Access-Control-Allow-Origin 不为 *</strong> ： 如果需要使用section来标示不同的会话，则需要前端设置允许cookie（因为浏览器是通过发送cookie中相关的ID ( JSESSIONID )来标识的），并且后台的 Access-Control-Allow-Origin 不可以设置为通配符 ‘ * ’，需要指定一个明确的域名，可以是 null (即通过本地文件  file:// 发送的请求)， 然后后台动态的获取request 的 origin 去设置  Access-Control-Allow-Origin 。</p>
+<p><strong>Access-Control-Allow-Origin 为 *</strong> ： 如果设置为 * ，表示可以让任何源访问，但是这里需要再设置一个参数 Access-Control-Allow-Credentials 为 false，表明不允许携带 cookie 才可以</p>
 </blockquote>
 </li>
 <li><p>Access-Control-Allow-Methods: “POST, …” ：该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法</p>
@@ -188,13 +189,12 @@
 <li><p>Access-Control-Allow-Headers: “Content-Type, …”：该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段</p>
 </li>
 <li><p>Access-Control-Max-Age: ‘3600’：规定在多长时间内不需要再发生 <strong>预检请求</strong> 就能跨域访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// spring 写法</span></div><div class="line"></div><div class="line"><span class="keyword">package</span> gdut.qg.utils;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.*;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Created by logan on 2017/5/23.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CORSFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse res, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</div><div class="line">        HttpServletRequest request = (HttpServletRequest) req;</div><div class="line">        HttpServletResponse response = (HttpServletResponse) res;</div><div class="line">        String Origin = request.getHeader(<span class="string">"Origin"</span>);</div><div class="line">      	<span class="comment">/* 此处通过动态设置运行跨域访问的源 */</span></div><div class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, Origin);</div><div class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"POST, GET, OPTIONS, DELETE"</span>);</div><div class="line">        response.setHeader(<span class="string">"Access-Control-Max-Age"</span>, <span class="string">"36000"</span>);</div><div class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Credentials"</span>, <span class="string">"true"</span>);</div><div class="line">        response.addHeader(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Origin, X-Requested-With, Content-Type, Accept"</span>);</div><div class="line">        chain.doFilter(req, res);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> </span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
-<a id="more"></a>
-<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// spring 写法</span></div><div class="line"></div><div class="line"><span class="keyword">package</span> gdut.qg.utils;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.*;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Created by logan on 2017/5/23.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CORSFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse res, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</div><div class="line">        HttpServletRequest request = (HttpServletRequest) req;</div><div class="line">        HttpServletResponse response = (HttpServletResponse) res;</div><div class="line">        String Origin = request.getHeader(<span class="string">"Origin"</span>);</div><div class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, Origin);</div><div class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"POST, GET, OPTIONS, DELETE"</span>);</div><div class="line">        response.setHeader(<span class="string">"Access-Control-Max-Age"</span>, <span class="string">"36000"</span>);</div><div class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Credentials"</span>, <span class="string">"true"</span>);</div><div class="line">        response.addHeader(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Origin, X-Requested-With, Content-Type, Accept"</span>);</div><div class="line">        chain.doFilter(req, res);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> </span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h3 id="2-前端设置"><a href="#2-前端设置" class="headerlink" title="2. 前端设置"></a>2. 前端设置</h3><ol>
+<h2 id="2-前端设置"><a href="#2-前端设置" class="headerlink" title="2. 前端设置"></a>2. 前端设置</h2><ol>
 <li><p>如果需要保持将两次请求维持在同一个会话中（即后台需要用到 session 来识别用户），需要保持Request Cookies 中的 JSESSIONID 的值在两次请求中不变，即需要在请求时允许跨域请求携带 Cookie</p>
 <ul>
 <li>原生</li>
@@ -203,19 +203,47 @@
 <ul>
 <li>jQuery</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// jQuery</span></div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">    type: <span class="string">"post"</span>,</div><div class="line">    url: <span class="string">"xxx"</span>,</div><div class="line">    data: data,</div><div class="line">    xhrFields: &#123;</div><div class="line">      withCredentials: <span class="literal">true</span>       <span class="comment">//允许跨域请求携带 Cookie</span></div><div class="line">    &#125;</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">         <span class="built_in">console</span>.log(data)</div><div class="line">    &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// jQuery</span></div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">    type: <span class="string">"post"</span>,</div><div class="line">    url: <span class="string">"xxx"</span>,</div><div class="line">    data: data,</div><div class="line">    xhrFields: &#123;</div><div class="line">      withCredentials: <span class="literal">true</span>       <span class="comment">//允许跨域请求携带 Cookie</span></div><div class="line">    &#125;</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line"> 		<span class="built_in">console</span>.log(data)</div><div class="line">    &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="二、插件跨域"><a href="#二、插件跨域" class="headerlink" title="二、插件跨域"></a>二、插件跨域</h1><blockquote>
+<h1 id="二、后台跨域-V2"><a href="#二、后台跨域-V2" class="headerlink" title="二、后台跨域-V2"></a>二、后台跨域-V2</h1><h2 id="1-后台设置-1"><a href="#1-后台设置-1" class="headerlink" title="1. 后台设置"></a>1. 后台设置</h2><ol>
+<li>配置过滤器，为所有的响应头都加上 下面的字段</li>
+</ol>
+<ul>
+<li><p>Access-Control-Allow-Origin: ‘ * ‘ ：允许通过跨域访问后台服务器的源，</p>
+<blockquote>
+<p><strong>Access-Control-Allow-Origin 不为 *</strong> ： 如果需要使用section来标示不同的会话，则需要前端设置允许cookie（因为浏览器是通过发送cookie中相关的ID ( JSESSIONID )来标识的），并且后台的 Access-Control-Allow-Origin 不可以设置为通配符 ‘ * ’，需要指定一个明确的域名，可以是 null (即通过本地文件  file:// 发送的请求)， 然后后台动态的获取request 的 origin 去设置  Access-Control-Allow-Origin 。</p>
+<p><strong>Access-Control-Allow-Origin 为 *</strong> ： 如果设置为 * ，表示可以让任何源访问，当是这里需要再设置一个参数 Access-Control-Allow-Credentials 为 false，表明不允许携带 cookie 才可以</p>
+</blockquote>
+</li>
+<li><p>Access-Control-Allow-Methods: “POST, …” ：该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法</p>
+</li>
+<li><p>Access-Control-Allow-Headers: “Content-Type, …”：该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段</p>
+</li>
+<li><p>Access-Control-Max-Age: ‘3600’：规定在多长时间内不需要再发生 <strong>预检请求</strong> 就能跨域访问</p>
+</li>
+<li><p>Access-Control-Allow-Credentials : false ： 不允许携带 cookie </p>
+<p>​</p>
+</li>
+</ul>
+<h2 id="2-前端设置-1"><a href="#2-前端设置-1" class="headerlink" title="2. 前端设置"></a>2. 前端设置</h2><ol>
+<li><p>设置 withCredentials 为 false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// jQuery</div><div class="line">  $.ajax(&#123;</div><div class="line">      type: &quot;post&quot;,</div><div class="line">      url: &quot;xxx&quot;,</div><div class="line">      data: data,</div><div class="line">      xhrFields: &#123;</div><div class="line">        withCredentials: false       //不允许跨域请求携带 Cookie</div><div class="line">      &#125;</div><div class="line">      success: function(data) &#123;</div><div class="line">          console.log(data)</div><div class="line">      &#125;,</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">// axios</div><div class="line">  import axios from &apos;axios&apos;</div><div class="line">  axios.defaults.withCredentials = false    //全局设置 withCredentials 为 false</div><div class="line">  export const IP = &apos;https://xxxxxxx.com/&apos;;  </div><div class="line">  export const myAxios = axios.create(&#123;</div><div class="line">      baseURL: IP,</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="3-缺点"><a href="#3-缺点" class="headerlink" title="3. 缺点"></a>3. 缺点</h2><ol>
+<li>由于不允许传cookie，所以无法把 section 通过 cookie 传到服务器，即后台获取不到section。所以无法记住登录状态，需要改为用 token 才行。</li>
+</ol>
+<h1 id="三、插件跨域"><a href="#三、插件跨域" class="headerlink" title="三、插件跨域"></a>三、插件跨域</h1><blockquote>
 <p>Google插件 ：Allow-Control-Allow-Origin: *</p>
 </blockquote>
-<h3 id="1-后台"><a href="#1-后台" class="headerlink" title="1. 后台"></a>1. 后台</h3><ol>
+<h2 id="1-后台"><a href="#1-后台" class="headerlink" title="1. 后台"></a>1. 后台</h2><ol>
 <li>不需要后台配置任何的响应头字段</li>
 </ol>
-<h3 id="2-前端"><a href="#2-前端" class="headerlink" title="2. 前端"></a>2. 前端</h3><ol>
+<h2 id="2-前端"><a href="#2-前端" class="headerlink" title="2. 前端"></a>2. 前端</h2><ol>
 <li>直接写要访问的其他域的路径，跟平时使用没有区别。</li>
 </ol>
-<h3 id="3-缺点"><a href="#3-缺点" class="headerlink" title="3. 缺点"></a>3. 缺点</h3><ol>
+<h2 id="3-缺点-1"><a href="#3-缺点-1" class="headerlink" title="3. 缺点"></a>3. 缺点</h2><ol>
 <li><p>插件跨域后相当于在不同的会话框中，所以没有包含之前登录的 section，即后台获取不到section。</p>
 </li>
 <li><p>该插件会将请求的 origin 设置为 ”http: //evil.com“。</p>
@@ -223,18 +251,21 @@
 <p>​</p>
 </li>
 </ol>
-<h1 id="三、代理跨域"><a href="#三、代理跨域" class="headerlink" title="三、代理跨域"></a>三、代理跨域</h1><h3 id="1-前端"><a href="#1-前端" class="headerlink" title="1. 前端"></a>1. 前端</h3><ol>
+<h1 id="四、代理跨域"><a href="#四、代理跨域" class="headerlink" title="四、代理跨域"></a>四、代理跨域</h1><h2 id="1-前端"><a href="#1-前端" class="headerlink" title="1. 前端"></a>1. 前端</h2><ol>
 <li>如果使用Vue框架，可以使用 Vue-cli 的 proxyTable 配置</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">    <span class="string">'/api'</span>: &#123;</div><div class="line">        target: <span class="string">'http://192.168.1.107:80'</span>,</div><div class="line">        changeOrigin: <span class="literal">true</span>,</div><div class="line">        pathRewrite: &#123;</div><div class="line">            <span class="string">'^/api'</span>: <span class="string">'/'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;,</div><div class="line"><span class="comment">// 把含有 api 的请求路径代理到 http://192.168.1.107:80/ 上。</span></div><div class="line"><span class="comment">//如 localhost:8080/api/add -&gt; http://192.168.1.107:80/add</span></div></pre></td></tr></table></figure>
 <p>可配置 axios 来食用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></div><div class="line"></div><div class="line">IP = <span class="string">'/api'</span>;</div><div class="line"></div><div class="line">myAxios = axios.create(&#123;</div><div class="line">    baseURL: IP</div><div class="line">&#125;)</div><div class="line">    </div><div class="line">getAllTeachers() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">        myAxios(&#123;</div><div class="line">            method: <span class="string">'POST'</span>,</div><div class="line">            url: <span class="string">'/teacher/allTeachers'</span></div><div class="line">        &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">            resolve(res.data)</div><div class="line">        &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">            reject(err)</div><div class="line">        &#125;)</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="2-后台"><a href="#2-后台" class="headerlink" title="2. 后台"></a>2. 后台</h3><ol>
-<li>不需要后台配置任何的响应头字段</li>
-<li>session仍然可以使用</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></div><div class="line"></div><div class="line">IP = <span class="string">'/api'</span>;</div><div class="line"></div><div class="line">myAxios = axios.create(&#123;</div><div class="line">	baseURL: IP</div><div class="line">&#125;)</div><div class="line">	</div><div class="line">getAllTeachers() &#123;</div><div class="line"> 	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">      	myAxios(&#123;</div><div class="line">         	method: <span class="string">'POST'</span>,</div><div class="line">   		 	url: <span class="string">'/teacher/allTeachers'</span></div><div class="line">      	&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">			resolve(res.data)</div><div class="line">		&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">			reject(err)</div><div class="line">		&#125;)</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2-后台"><a href="#2-后台" class="headerlink" title="2. 后台"></a>2. 后台</h2><ol>
+<li><p>不需要后台配置任何的响应头字段</p>
+</li>
+<li><p>session仍然可以使用</p>
+<p>​</p>
+</li>
 </ol>
-<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><ol>
-<li><p>使用第一种可以用到真实的线上环境，而第二种和第三种只是用于开发环境</p>
+<h1 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h1><ol>
+<li><p>使用第一种可以用到真实的线上环境，第二中可以配合token在真实线上使用，而第三种和第四种只是用于开发环境</p>
 </li>
 <li><p>如果后台不需要使用 section，并且之后整合前后代码是在同一个服务器上，则推荐使用第二种方式，因为这样前后都不要修该自己的代码，能缩短开发周期。</p>
 </li>
@@ -244,14 +275,15 @@
 <p>​</p>
 </li>
 </ol>
-<h1 id="五、参考"><a href="#五、参考" class="headerlink" title="五、参考"></a>五、参考</h1><ol>
+<h1 id="六、参考"><a href="#六、参考" class="headerlink" title="六、参考"></a>六、参考</h1><ol>
 <li>关于简单请求与非简单请求的跨域问题。<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解</a></li>
 <li>后台实现跨越。<a href="http://www.imooc.com/article/7719" target="_blank" rel="external">Spring MVC通过CROS协议解决跨域问题</a></li>
 <li><a href="http://www.cnblogs.com/xiaoymin/p/6104018.html" target="_blank" rel="external">跨域请求,关于后端session会话丢失的解决办法</a></li>
 <li><a href="http://frontenddev.org/article/ajax-browser-cross-domain-request-access-control.html" target="_blank" rel="external">浏览器 AJAX 跨域请求访问控制</a> </li>
 </ol>
 <hr>
-<p><strong> 声明：</strong><br>文章标题：<a href="https://ccczss.github.io/2017/09/30/跨域总结/" target="_blank" rel="external">跨域总结</a><br>文章作者：Czs<br>文章链接：<a href="https://ccczss.github.io/2017/09/30/跨域总结/" target="_blank" rel="external">https://ccczss.github.io/2017/09/30/跨域总结/</a><br>文章版权属本博主所有，有问题或者建议欢迎在下方评论。欢迎转载、引用，但请标明作者和原文地址，谢谢。</p>
+<p><strong> 声明：</strong></p>
+<p>文章作者：Czs<br>转载、引用，但请标明作者和原文地址</p>
 
       
 
@@ -364,11 +396,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/30/Javascript设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/30/Javascript设计模式(1)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Javascript设计模式
+          Javascript设计模式(1)
         
       </div>
     </a>
@@ -418,7 +450,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Czs
+    		&copy; 2018 Czs
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -522,10 +554,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -538,18 +566,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">transform</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
@@ -558,7 +574,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,15 +602,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">transform</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,6 +619,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
             
             <div class="clearfix"></div>

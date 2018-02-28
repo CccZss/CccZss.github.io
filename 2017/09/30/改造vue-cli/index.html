@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>改造vue-cli | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="配置 loader 和 依赖项1. 引入 less npm 下载 1$ cnpm install less less-loader --save-dev">
+  <meta name="description" content="配置 loader 和 依赖项">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="改造vue-cli">
 <meta property="og:url" content="http://yoursite.com/2017/09/30/改造vue-cli/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="配置 loader 和 依赖项1. 引入 less npm 下载 1$ cnpm install less less-loader --save-dev">
-<meta property="og:updated_time" content="2017-10-01T11:41:11.327Z">
+<meta property="og:description" content="配置 loader 和 依赖项">
+<meta property="og:updated_time" content="2018-02-28T14:07:12.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="改造vue-cli">
-<meta name="twitter:description" content="配置 loader 和 依赖项1. 引入 less npm 下载 1$ cnpm install less less-loader --save-dev">
+<meta name="twitter:description" content="配置 loader 和 依赖项">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -174,13 +174,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="配置-loader-和-依赖项"><a href="#配置-loader-和-依赖项" class="headerlink" title="配置 loader 和 依赖项"></a>配置 loader 和 依赖项</h1><h2 id="1-引入-less"><a href="#1-引入-less" class="headerlink" title="1. 引入 less"></a>1. 引入 less</h2><ul>
+        <h1 id="配置-loader-和-依赖项"><a href="#配置-loader-和-依赖项" class="headerlink" title="配置 loader 和 依赖项"></a>配置 loader 和 依赖项</h1><a id="more"></a>
+<h2 id="1-引入-less"><a href="#1-引入-less" class="headerlink" title="1. 引入 less"></a>1. 引入 less</h2><ul>
 <li><p>npm 下载</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> cnpm install less less-loader --save-dev</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<a id="more"></a>
-<ul>
 <li><p>webpack.base.conf.js 配置</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在 rules 中引入 loader</span></div><div class="line"></div><div class="line">&#123;</div><div class="line">    test: <span class="regexp">/\.less$/</span>,</div><div class="line">    include: [</div><div class="line">    path.resolve(__dirname, <span class="string">"not_exist_path"</span>)</div><div class="line">    ],</div><div class="line">    loader: <span class="string">'style-loader!css-loader!less-loader'</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 </li>
@@ -192,14 +190,14 @@
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install bable-ployfill --save</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 入口文件</span></div><div class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// webpack.conf.js</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    entry: [<span class="string">'babel-polyfill'</span>, entry-file-URL]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// webpack.conf.js</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	entry: [<span class="string">'babel-polyfill'</span>, entry-file-URL]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="4-引入其他"><a href="#4-引入其他" class="headerlink" title="4. 引入其他"></a>4. 引入其他</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install axios --save   </div><div class="line">npm install iview --save    <span class="comment">// UI库</span></div><div class="line">npm install vuex --save</div></pre></td></tr></table></figure>
 <h1 id="配置多页面"><a href="#配置多页面" class="headerlink" title="配置多页面"></a>配置多页面</h1><ol>
 <li><p>添加 【入口工具函数】</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// build/utils.js</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> glob = <span class="built_in">require</span>(<span class="string">'glob'</span>);</div><div class="line"></div><div class="line">exports.getEntries = <span class="function"><span class="keyword">function</span> (<span class="params">globPath</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> entries = &#123;&#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">    * 读取src目录,并进行路径裁剪</span></div><div class="line"><span class="comment">    */</span></div><div class="line">    glob.sync(globPath).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">entry</span>) </span>&#123;</div><div class="line">        <span class="comment">/**</span></div><div class="line"><span class="comment">        * path.basename 提取出用 ‘/' 隔开的path的最后一部分，除第一个参数外其余是需要过滤的字符串</span></div><div class="line"><span class="comment">        * path.extname 获取文件后缀</span></div><div class="line"><span class="comment">        */</span></div><div class="line">        <span class="keyword">var</span> basename = path.basename(entry, path.extname(entry)) <span class="comment">// 过滤router.js</span></div><div class="line">        <span class="comment">// ***************begin***************</span></div><div class="line">        <span class="comment">// 当然， 你也可以加上模块名称, 即输出如下： &#123; module/main: './src/module/index/main.js', module/test: './src/module/test/test.js' &#125;</span></div><div class="line">        <span class="comment">// 最终编译输出的文件也在module目录下， 访问路径需要时 localhost:8080/module/index.html</span></div><div class="line">        <span class="comment">// slice 从已有的数组中返回选定的元素, -3 倒序选择，即选择最后三个</span></div><div class="line">        <span class="keyword">var</span> tmp = entry.split(<span class="string">'/'</span>).splice(<span class="number">-3</span>)</div><div class="line">        <span class="keyword">if</span>(basename!==tmp[<span class="number">1</span>]) <span class="keyword">return</span>;  <span class="comment">//过滤其他js文件</span></div><div class="line">        <span class="keyword">var</span> pathname = tmp.splice(<span class="number">0</span>, <span class="number">1</span>) + <span class="string">'/'</span> + basename; <span class="comment">// splice(0, 1)取tmp数组中第一个元素</span></div><div class="line">        entries[pathname] = [<span class="string">'babel-polyfill'</span>,entry]</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> entries;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 变量值</span></div><div class="line"><span class="comment">    entry：     ../src/html/index/index.js</span></div><div class="line"><span class="comment">    basename:   index</span></div><div class="line"><span class="comment">    tmp:        [ 'html', 'index', 'index.js' ]</span></div><div class="line"><span class="comment">    pathname:   html/index</span></div><div class="line"><span class="comment">    enteries:   &#123; </span></div><div class="line"><span class="comment">                    'html/index': '../src/html/index/index.js',</span></div><div class="line"><span class="comment">                    'html/first': '../src/html/first/first.js' </span></div><div class="line"><span class="comment">                &#125;</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>修改入口配置</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bulid/webpack.base.conf.js</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line"> entry: utils.getEntries(<span class="string">'./src/html/*/*.js'</span>),</div><div class="line">     ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bulid/webpack.base.conf.js</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	entry: utils.getEntries(<span class="string">'./src/html/*/*.js'</span>),</div><div class="line">  	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>修改 HtmlWebpackPlugin 配置</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bulid/webpack.dev.conf.js</span></div><div class="line"></div><div class="line"># 1. 引入工具函数</div><div class="line"><span class="keyword">var</span> utils = <span class="built_in">require</span>(<span class="string">'./utils'</span>) </div><div class="line"></div><div class="line"># 2. 注释掉原来的 HtmlWebpackPlugin 配置，大概在 29 行</div><div class="line"></div><div class="line"># 3. 在文件末尾加入下面代码</div><div class="line"><span class="keyword">var</span> pages = utils.getEntries(<span class="string">'./src/html/*/*.html'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> pathname <span class="keyword">in</span> pages) &#123;</div><div class="line">  <span class="comment">// 配置生成的html文件，定义路径等</span></div><div class="line">  <span class="keyword">var</span> conf = &#123;</div><div class="line">    favicon: <span class="string">"favicon.ico"</span>,</div><div class="line">    filename: pathname + <span class="string">'.html'</span>,</div><div class="line">    template: pages[pathname][<span class="number">1</span>],   <span class="comment">// 模板路径</span></div><div class="line">    inject: <span class="literal">true</span>,              <span class="comment">// js插入位置</span></div><div class="line">    excludeChunks: <span class="built_in">Object</span>.keys(pages).filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> (item != pathname)</div><div class="line">    &#125;)</div><div class="line">  &#125;;</div><div class="line">  <span class="built_in">module</span>.exports.plugins.push(<span class="keyword">new</span> HtmlWebpackPlugin(conf));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -212,20 +210,24 @@
 <li><p>修改打包路径</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// config/index.js</span></div><div class="line"></div><div class="line">bulid: &#123;</div><div class="line">    assetsPublicPath: <span class="string">'../'</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
+<li><p>修改打包后 css 文件中对 图片和字库文件引用路径出错的的问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// build/utils</span></div><div class="line"></div><div class="line"><span class="comment">// 38行</span></div><div class="line"><span class="keyword">if</span> (options.extract) &#123;</div><div class="line">    <span class="keyword">return</span> ExtractTextPlugin.extract(&#123;</div><div class="line">        use: loaders,</div><div class="line">        publicPath: <span class="string">'../../../'</span>,         <span class="comment">// 修改这里</span></div><div class="line">        fallback: <span class="string">'vue-style-loader'</span></div><div class="line">    &#125;)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  	<span class="keyword">return</span> [<span class="string">'vue-style-loader'</span>].concat(loaders)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 <li><p>检测浏览器版本</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 在模板 html 中引入 --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"> <span class="keyword">if</span> (!+<span class="string">"\v1"</span>) &#123;</span></div><div class="line"><span class="handlebars"><span class="xml">     document.body.innerHTML = "<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">'background: #00a1d6; text-align: center; padding: 10px 0; color: #fff;'</span>&gt;</span>为了保护你的账号安全，Anywork已不支持IE8及以下版本浏览器访问，建议你升级到IE最新版本浏览器，或使用Chrome等其他浏览器。<span class="tag">&lt;/<span class="name">div</span>&gt;</span>"</span></span></div><div class="line"><span class="undefined"> &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 在模板 html 中引入 --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="keyword">if</span> (!+<span class="string">"\v1"</span>) &#123;</span></div><div class="line"><span class="handlebars"><span class="xml">		document.body.innerHTML = "<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">'background: #00a1d6; text-align: center; padding: 10px 0; color: #fff;'</span>&gt;</span>为了保护你的账号安全，Anywork已不支持IE8及以下版本浏览器访问，建议你升级到IE最新版本浏览器，或使用Chrome等其他浏览器。<span class="tag">&lt;/<span class="name">div</span>&gt;</span>"</span></span></div><div class="line"><span class="undefined">	&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ol>
 <h1 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h1><ol>
-<li><p>定义 <figure class="highlight plain"><figcaption><span>使用 axios 规定访问路径</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```javascript</div><div class="line">// src/utils/interaction.js</div><div class="line"></div><div class="line">import axios from &apos;axios&apos;</div><div class="line"></div><div class="line">export const IP = &apos;/anywork/&apos;;</div><div class="line">export const myAxios = axios.create(&#123;</div><div class="line"> baseURL: IP,</div><div class="line"> // withCredentials: true</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<li><p>定义 <figure class="highlight plain"><figcaption><span>使用 axios 规定访问路径</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```javascript</div><div class="line">// src/utils/interaction.js</div><div class="line"></div><div class="line">import axios from &apos;axios&apos;</div><div class="line"></div><div class="line">export const IP = &apos;/anywork/&apos;;</div><div class="line">export const myAxios = axios.create(&#123;</div><div class="line">	baseURL: IP,</div><div class="line">	// withCredentials: true</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 </li>
 <li><p>添加跨域配置</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// config/index.js</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  dev: &#123;</div><div class="line">    proxyTable: &#123;</div><div class="line">        <span class="string">'/anywork'</span>: &#123;</div><div class="line">            target: <span class="string">'http://10.21.48.11:8080'</span>,</div><div class="line">            changeOrigin: <span class="literal">true</span>,</div><div class="line">            pathRewrite: &#123;</div><div class="line">                <span class="string">'^/anywork'</span>: <span class="string">'/anywork'</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>​</p>
 </li>
 </ol>
 <hr>
-<p><strong> 声明：</strong><br>文章标题：<a href="https://ccczss.github.io/2017/09/30/改造vue-cli/" target="_blank" rel="external">改造vue-cli</a><br>文章作者：Czs<br>文章链接：<a href="https://ccczss.github.io/2017/09/30/改造vue-cli/" target="_blank" rel="external">https://ccczss.github.io/2017/09/30/改造vue-cli/</a><br>文章版权属本博主所有，有问题或者建议欢迎在下方评论。欢迎转载、引用，但请标明作者和原文地址，谢谢。</p>
+<p><strong> 声明：</strong><br>文章作者：Czs<br>转载、引用，但请标明作者和原文地址</p>
 
       
 
@@ -384,7 +386,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Czs
+    		&copy; 2018 Czs
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -488,10 +490,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -504,18 +502,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">transform</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
@@ -524,7 +510,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +538,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">transform</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,6 +555,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>flex布局 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="flex 参考至 1. 图例">
-<meta name="keywords" content="flex,CSS3">
+  <meta name="description" content="flex 布局1. 图例">
+<meta name="keywords" content="CSS3,flex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flex布局">
 <meta property="og:url" content="http://yoursite.com/2017/10/01/flex布局/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="flex 参考至 1. 图例">
+<meta property="og:description" content="flex 布局1. 图例">
 <meta property="og:image" content="https://mdn.mozillademos.org/files/12998/flexbox.png">
 <meta property="og:image" content="http://ougnqxz83.bkt.clouddn.com/17-10-1/73735291.jpg">
 <meta property="og:image" content="http://ougnqxz83.bkt.clouddn.com/17-10-1/99356430.jpg">
 <meta property="og:image" content="http://ougnqxz83.bkt.clouddn.com/17-10-1/79784141.jpg">
 <meta property="og:image" content="http://ougnqxz83.bkt.clouddn.com/17-10-1/894260.jpg">
-<meta property="og:updated_time" content="2017-10-01T12:22:35.681Z">
+<meta property="og:updated_time" content="2018-02-28T12:29:55.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flex布局">
-<meta name="twitter:description" content="flex 参考至 1. 图例">
+<meta name="twitter:description" content="flex 布局1. 图例">
 <meta name="twitter:image" content="https://mdn.mozillademos.org/files/12998/flexbox.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -180,53 +180,76 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h1><blockquote>
-<h3 id="参考至"><a href="#参考至" class="headerlink" title="参考至"></a><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">参考至</a></h3></blockquote>
-<h2 id="1-图例"><a href="#1-图例" class="headerlink" title="1. 图例"></a>1. 图例</h2><p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt="flex 的位置表"></p>
+        <h1 id="flex-布局"><a href="#flex-布局" class="headerlink" title="flex 布局"></a>flex 布局</h1><h2 id="1-图例"><a href="#1-图例" class="headerlink" title="1. 图例"></a>1. 图例</h2><p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt="flex 的位置表"></p>
 <a id="more"></a>
-<h2 id="2-容器的属性"><a href="#2-容器的属性" class="headerlink" title="2. 容器的属性"></a>2. 容器的属性</h2><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex-direction: row | row-reverse | column | column-reverse;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>row（默认值）：主轴为水平方向，起点在左端。<br>row-reverse：主轴为水平方向，起点在右端。<br>column：主轴为垂直方向，起点在上沿。<br>column-reverse：主轴为垂直方向，起点在下沿。</p>
-</blockquote>
-<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex-wrap: nowrap | wrap | wrap-reverse;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>nowrap（默认）：不换行<br>wrap：换行，第一行在上方<br>wrap-reverse：换行，第一行在下方。</p>
-</blockquote>
-<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p>
-</blockquote>
-<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">justify-content: flex-start | flex-end | center | space-between | space-around;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
-</blockquote>
-<h4 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">align-items: flex-start | flex-end | center | baseline | stretch;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>baseline: 项目的第一行文字的基线对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。  </p>
-</blockquote>
-<h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
-</blockquote>
+<h2 id="2-容器的属性"><a href="#2-容器的属性" class="headerlink" title="2. 容器的属性"></a>2. 容器的属性</h2><h3 id="1-flex-direction-属性"><a href="#1-flex-direction-属性" class="headerlink" title="1. flex-direction 属性"></a>1. flex-direction 属性</h3><p><code>flex-direction: row | row-reverse | column | column-reverse;</code></p>
+<ul>
+<li>row（默认值）：主轴为水平方向，起点在左端</li>
+<li>row-reverse：主轴为水平方向，起点在右端</li>
+<li>column：主轴为垂直方向，起点在上沿</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿</li>
+</ul>
+<h3 id="2-flex-wrap-属性"><a href="#2-flex-wrap-属性" class="headerlink" title="2. flex-wrap 属性"></a>2. flex-wrap 属性</h3><p><code>flex-wrap: nowrap | wrap | wrap-reverse;</code></p>
+<ul>
+<li>nowrap（默认）：不换行</li>
+<li>wrap：换行，第一行在上方</li>
+<li>wrap-reverse：换行，第一行在下方</li>
+</ul>
+<h3 id="3-flex-flow-属性"><a href="#3-flex-flow-属性" class="headerlink" title="3. flex-flow 属性"></a>3. flex-flow 属性</h3><p><code>flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</code></p>
+<ul>
+<li>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</li>
+</ul>
+<h3 id="4-justify-content-属性"><a href="#4-justify-content-属性" class="headerlink" title="4. justify-content 属性"></a>4. justify-content 属性</h3><p><code>justify-content: flex-start | flex-end | center | space-between | space-around;</code></p>
+<ul>
+<li>flex-start（默认值）：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center： 居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+<h3 id="5-align-items-属性"><a href="#5-align-items-属性" class="headerlink" title="5. align-items 属性"></a>5. align-items 属性</h3><p><code>align-items: flex-start | flex-end | center | baseline | stretch;</code></p>
+<ul>
+<li>flex-start：交叉轴的起点对齐</li>
+<li>flex-end：交叉轴的终点对齐</li>
+<li>center：交叉轴的中点对齐</li>
+<li>baseline: 项目的第一行文字的基线对齐</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度</li>
+</ul>
+<h3 id="6-align-content-属性"><a href="#6-align-content-属性" class="headerlink" title="6. align-content 属性"></a>6. align-content 属性</h3><p><code>align-content: flex-start | flex-end | center | space-between | space-around | stretch;</code></p>
+<ul>
+<li>flex-start：与交叉轴的起点对齐。</li>
+<li>flex-end：与交叉轴的终点对齐。</li>
+<li>center：与交叉轴的中点对齐。</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li>stretch（默认值）：轴线占满整个交叉轴。</li>
+</ul>
 <h2 id="3-项目的属性"><a href="#3-项目的属性" class="headerlink" title="3. 项目的属性"></a>3. 项目的属性</h2><ol>
-<li>order: <integer>; </integer></li>
+<li>order: <integer>;</integer></li>
 <li>flex-grow: <number>; /<em> default 0 表示不会自动填充未满的空间</em>/</number></li>
-<li>flex-shrink: <number>; /<em> default 1 表示可以压缩已设定的宽度</em>/  <blockquote>
-<p><strong>故 flex-grow, flex-shrink两个同时设为0代表项目的大小固定，不通过改变大小来适应容器</strong></p>
+<li>flex-shrink: <number>; /<em> default 1 表示可以压缩已设定的宽度</em>/<blockquote>
+<p>故 flex-grow, flex-shrink两个同时设为0代表项目的大小固定，不通过改变大小来适应容器</p>
 </blockquote>
 </number></li>
 <li>flex-basis: <length> | auto; /<em> default auto </em>/ </length></li>
 <li>flex: none | [ &lt;’flex-grow’&gt; &lt;’flex-shrink’&gt;? || &lt;’flex-basis’&gt; ] </li>
 <li>align-self: auto | flex-start | flex-end | center | baseline | stretch; </li>
 </ol>
-<h2 id="4-理解"><a href="#4-理解" class="headerlink" title="4. 理解"></a>4. 理解</h2><blockquote>
-<h3 id="参考至-1"><a href="#参考至-1" class="headerlink" title="参考至"></a><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">参考至</a></h3></blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrop"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h5 id="1-当-wrop-设置为-wrop-时，可能造成里面的-item-不能充满整个容器，这时可以设置-wrop-或-item的"><a href="#1-当-wrop-设置为-wrop-时，可能造成里面的-item-不能充满整个容器，这时可以设置-wrop-或-item的" class="headerlink" title="1. 当 wrop 设置为 wrop 时，可能造成里面的 item 不能充满整个容器，这时可以设置 wrop 或 item的 "></a>1. 当 wrop 设置为 wrop 时，可能造成里面的 item 不能充满整个容器，这时可以设置 wrop 或 item的 <figure class="highlight plain"><figcaption><span>1; ```,可以使所有的 itme 或对应的 item 补充剩余的空间</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```css</div><div class="line">.wrop &#123;</div><div class="line">  display: flex;</div><div class="line">  flex-wrap: wrap;</div><div class="line">  align-content: flex-start;</div><div class="line">&#125;</div><div class="line">.item &#123;</div><div class="line">    height: 25%;</div><div class="line">    width: 30%;</div><div class="line">&#125;</div><div class="line">.item:nth-child(1)&#123;</div><div class="line">    flex-grow: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></h5><p><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/73735291.jpg" alt=""><br><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/99356430.jpg" alt=""></p>
-<h5 id="2-当-wrop-设置为-nowrop-时，可能造成里面的-item-充满整个容器而导致宽度比设定时小，这时可以设置-wrop-或-item的"><a href="#2-当-wrop-设置为-nowrop-时，可能造成里面的-item-充满整个容器而导致宽度比设定时小，这时可以设置-wrop-或-item的" class="headerlink" title="2. 当 wrop 设置为 nowrop 时，可能造成里面的 item 充满整个容器而导致宽度比设定时小，这时可以设置 wrop 或 item的 "></a>2. 当 wrop 设置为 nowrop 时，可能造成里面的 item 充满整个容器而导致宽度比设定时小，这时可以设置 wrop 或 item的 <figure class="highlight plain"><figcaption><span>0; ```,可以使所有的 itme 或对应的 item 的大小保持原来的大小</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```css </div><div class="line">.wrop &#123;</div><div class="line">  display: flex;</div><div class="line">  flex-wrap: nowrap;</div><div class="line">  align-content: flex-start;</div><div class="line">&#125;</div><div class="line">.item &#123;</div><div class="line">    height: 25%;</div><div class="line">    flex-basis: 40%;</div><div class="line">&#125;</div><div class="line">.item:nth-child(1)&#123;</div><div class="line">    flex-shrink: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></h5><p><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/79784141.jpg" alt=""><br><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/894260.jpg" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</div><div class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</div><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no&quot;&gt;</div><div class="line">&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;../images/day.png&quot; media=&quot;screen&quot;&gt;</div><div class="line">&lt;style&gt;</div><div class="line">*&#123;</div><div class="line">    margin: 0;</div><div class="line">&#125;</div><div class="line">html&#123;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div><div class="line">body&#123;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div><div class="line">.HolyGrail &#123;</div><div class="line">  min-height: 100vh;</div><div class="line">  background-color: #eae6e6;</div><div class="line">&#125;</div><div class="line">header,</div><div class="line">footer &#123;</div><div class="line">    color: white;</div><div class="line">    text-align: center;</div><div class="line">    background-color: #484848;</div><div class="line">    box-sizing: border-box;</div><div class="line">    border: 1px solid white;</div><div class="line">&#125;</div><div class="line">.HolyGrail &#123;</div><div class="line">    display: flex;</div><div class="line">    flex-direction: column;</div><div class="line">&#125;</div><div class="line">header,</div><div class="line">footer &#123;</div><div class="line">    flex: 1;</div><div class="line">&#125;</div><div class="line">.HolyGrail-body &#123;</div><div class="line">  display: flex;</div><div class="line">  /*flex: 1;*/</div><div class="line">  height: 60%;</div><div class="line">&#125;</div><div class="line">.HolyGrail-nav, .HolyGrail-ads &#123;</div><div class="line">  /* 两个边栏的宽度设为12em */</div><div class="line">  flex: auto;</div><div class="line">  box-sizing: border-box;</div><div class="line">  border: 1px solid;</div><div class="line">&#125;</div><div class="line">.HolyGrail-content &#123;</div><div class="line">  flex-grow: 1;</div><div class="line">  box-sizing: border-box;</div><div class="line">  border: 1px solid;</div><div class="line">&#125;</div><div class="line">.HolyGrail-nav&#123;</div><div class="line">    order: -1;</div><div class="line">&#125;</div><div class="line">@media (max-width: 768px) &#123;</div><div class="line">  .HolyGrail-body &#123;</div><div class="line">    flex-direction: column;</div><div class="line">    /*flex: 1;*/</div><div class="line">  &#125;</div><div class="line">  .HolyGrail-nav,</div><div class="line">  .HolyGrail-ads,</div><div class="line">  .HolyGrail-content &#123;</div><div class="line">    flex: auto;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;body class=&quot;HolyGrail&quot;&gt;</div><div class="line">  &lt;header&gt;...&lt;/header&gt;</div><div class="line">  &lt;div class=&quot;HolyGrail-body&quot;&gt;</div><div class="line">    &lt;main class=&quot;HolyGrail-content&quot;&gt;content&lt;/main&gt;</div><div class="line">    &lt;nav class=&quot;HolyGrail-nav&quot;&gt;nav&lt;/nav&gt;</div><div class="line">    &lt;aside class=&quot;HolyGrail-ads&quot;&gt;ads&lt;/aside&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;footer&gt;...&lt;/footer&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="4-理解"><a href="#4-理解" class="headerlink" title="4. 理解"></a>4. 理解</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrop"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>当 wrop 设置为 wrop 时，可能造成里面的 item 不能充满整个容器，这时可以设置 wrop 或 item的 <code>flex-grow: 1;</code>,可以使所有的 itme 或对应的 item 补充剩余的空间</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrop</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">flex-wrap</span>: wrap;</div><div class="line">  <span class="attribute">align-content</span>: flex-start;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">25%</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">30%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span><span class="selector-pseudo">:nth-child(1)</span>&#123;</div><div class="line">    <span class="attribute">flex-grow</span>: <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/73735291.jpg" alt=""><br><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/99356430.jpg" alt=""></p>
+<ol>
+<li>当 wrop 设置为 nowrop 时，可能造成里面的 item 充满整个容器而导致宽度比设定时小，这时可以设置 wrop 或 item的 <code>flex-shrink: 0;</code>,可以使所有的 itme 或对应的 item 的大小保持原来的大小</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrop</span> &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">flex-wrap</span>: nowrap;</div><div class="line">  <span class="attribute">align-content</span>: flex-start;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">25%</span>;</div><div class="line">    <span class="attribute">flex-basis</span>: <span class="number">40%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span><span class="selector-pseudo">:nth-child(1)</span>&#123;</div><div class="line">    <span class="attribute">flex-shrink</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/79784141.jpg" alt=""><br><img src="http://ougnqxz83.bkt.clouddn.com/17-10-1/894260.jpg" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span> <span class="attr">href</span>=<span class="string">"../images/day.png"</span> <span class="attr">media</span>=<span class="string">"screen"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">*&#123;</span></div><div class="line"><span class="undefined">  margin: 0;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined">html&#123;</span></div><div class="line"><span class="undefined">  height: 100%;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined">body&#123;</span></div><div class="line"><span class="undefined">  height: 100%;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="css"><span class="selector-class">.HolyGrail</span> &#123;</span></div><div class="line"><span class="undefined">  min-height: 100vh;</span></div><div class="line"><span class="css">  <span class="selector-tag">background-color</span>: <span class="selector-id">#eae6e6</span>;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined">header,</span></div><div class="line"><span class="undefined">footer &#123;</span></div><div class="line"><span class="undefined">  color: white;</span></div><div class="line"><span class="undefined">  text-align: center;</span></div><div class="line"><span class="css">  <span class="selector-tag">background-color</span>: <span class="selector-id">#484848</span>;</span></div><div class="line"><span class="undefined">  box-sizing: border-box;</span></div><div class="line"><span class="undefined">  border: 1px solid white;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="css"><span class="selector-class">.HolyGrail</span> &#123;</span></div><div class="line"><span class="undefined">  display: flex;</span></div><div class="line"><span class="undefined">  flex-direction: column;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined">header,</span></div><div class="line"><span class="undefined">footer &#123;</span></div><div class="line"><span class="undefined">  flex: 1;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="css"><span class="selector-class">.HolyGrail-body</span> &#123;</span></div><div class="line"><span class="undefined">  display: flex;</span></div><div class="line"><span class="css">  <span class="comment">/*flex: 1;*/</span></span></div><div class="line"><span class="undefined">  height: 60%;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="css"><span class="selector-class">.HolyGrail-nav</span>, <span class="selector-class">.HolyGrail-ads</span> &#123;</span></div><div class="line"><span class="css">  <span class="comment">/* 两个边栏的宽度设为12em */</span></span></div><div class="line"><span class="undefined">  flex: auto;</span></div><div class="line"><span class="undefined">  box-sizing: border-box;</span></div><div class="line"><span class="undefined">  border: 1px solid;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="css"><span class="selector-class">.HolyGrail-content</span> &#123;</span></div><div class="line"><span class="undefined">  flex-grow: 1;</span></div><div class="line"><span class="undefined">  box-sizing: border-box;</span></div><div class="line"><span class="undefined">  border: 1px solid;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="css"><span class="selector-class">.HolyGrail-nav</span>&#123;</span></div><div class="line"><span class="undefined">  order: -1;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="css">@<span class="keyword">media</span> (max-width: <span class="number">768px</span>) &#123;</span></div><div class="line"><span class="css">  <span class="selector-class">.HolyGrail-body</span> &#123;</span></div><div class="line"><span class="undefined">    flex-direction: column;</span></div><div class="line"><span class="css">    <span class="comment">/*flex: 1;*/</span></span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.HolyGrail-nav</span>,</span></div><div class="line"><span class="css">  <span class="selector-class">.HolyGrail-ads</span>,</span></div><div class="line"><span class="css">  <span class="selector-class">.HolyGrail-content</span> &#123;</span></div><div class="line"><span class="undefined">    flex: auto;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"HolyGrail"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>...<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"HolyGrail-body"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">main</span> <span class="attr">class</span>=<span class="string">"HolyGrail-content"</span>&gt;</span>content<span class="tag">&lt;/<span class="name">main</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"HolyGrail-nav"</span>&gt;</span>nav<span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">"HolyGrail-ads"</span>&gt;</span>ads<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span>...<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="5-参考链接"><a href="#5-参考链接" class="headerlink" title="5. 参考链接"></a>5. 参考链接</h2><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">Flex 布局教程：语法篇</a><br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">Flex 布局教程：实例篇</a></p>
 <hr>
-<p><strong> 声明：</strong><br>文章标题：<a href="https://ccczss.github.io/2017/10/01/flex布局/" target="_blank" rel="external">flex布局</a><br>文章作者：Czs<br>文章链接：<a href="https://ccczss.github.io/2017/10/01/flex布局/" target="_blank" rel="external">https://ccczss.github.io/2017/10/01/flex布局/</a><br>文章版权属本博主所有，有问题或者建议欢迎在下方评论。欢迎转载、引用，但请标明作者和原文地址，谢谢。</p>
+<p><strong> 声明：</strong><br>文章作者：Czs<br>转载、引用，但请标明作者和原文地址</p>
 
       
 
@@ -261,11 +284,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">flex</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSS3</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSS3</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">flex</a>
         		</li>
       		
 		</ul>
@@ -335,11 +358,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/01/transform-3D/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/01/transfrom-3D/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          transform-3D
+          CSS3 Tranform 3D 的应用
         
       </div>
     </a>
@@ -389,7 +412,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Czs
+    		&copy; 2018 Czs
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -493,10 +516,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -509,18 +528,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">transform</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
@@ -529,7 +536,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,15 +564,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">transform</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,6 +581,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
             
             <div class="clearfix"></div>

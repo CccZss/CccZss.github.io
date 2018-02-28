@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Bus_and_Vuex | Hexo</title>
+  <title>Vue 非父子组件通信方案 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Bus 在 main.js 里面  1234import Vue from &apos;vue&apos;const bus = new Vue()Vue.prototype.$bus = bus">
+  <meta name="description" content="Vue 非父子组件通信方案概述在 Vue 中模块间的通信很普遍如果是单纯的父子组件间传递信息，父组件可以使用 props 将数据向下传递到子组件，而在子组件中可以使用 $emit （父组件需要先监听对应子组件触发的事件） 向父组件传递信息。但是当我们需要进行非父子组件间的通信或者是通过上述的方式进行父子组件间的通信过于复杂时就需要使用以下的非父子组件通信方案来进行组件间信息的传递：  使用一个空的">
 <meta name="keywords" content="vuex,vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bus_and_Vuex">
+<meta property="og:title" content="Vue 非父子组件通信方案">
 <meta property="og:url" content="http://yoursite.com/2017/10/01/Bus-and-Vuex/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Bus 在 main.js 里面  1234import Vue from &apos;vue&apos;const bus = new Vue()Vue.prototype.$bus = bus">
-<meta property="og:updated_time" content="2017-10-02T02:04:20.699Z">
+<meta property="og:description" content="Vue 非父子组件通信方案概述在 Vue 中模块间的通信很普遍如果是单纯的父子组件间传递信息，父组件可以使用 props 将数据向下传递到子组件，而在子组件中可以使用 $emit （父组件需要先监听对应子组件触发的事件） 向父组件传递信息。但是当我们需要进行非父子组件间的通信或者是通过上述的方式进行父子组件间的通信过于复杂时就需要使用以下的非父子组件通信方案来进行组件间信息的传递：  使用一个空的">
+<meta property="og:updated_time" content="2018-02-28T14:08:30.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bus_and_Vuex">
-<meta name="twitter:description" content="Bus 在 main.js 里面  1234import Vue from &apos;vue&apos;const bus = new Vue()Vue.prototype.$bus = bus">
+<meta name="twitter:title" content="Vue 非父子组件通信方案">
+<meta name="twitter:description" content="Vue 非父子组件通信方案概述在 Vue 中模块间的通信很普遍如果是单纯的父子组件间传递信息，父组件可以使用 props 将数据向下传递到子组件，而在子组件中可以使用 $emit （父组件需要先监听对应子组件触发的事件） 向父组件传递信息。但是当我们需要进行非父子组件间的通信或者是通过上述的方式进行父子组件间的通信过于复杂时就需要使用以下的非父子组件通信方案来进行组件间信息的传递：  使用一个空的">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Bus_and_Vuex
+      Vue 非父子组件通信方案
     </h1>
   
 
@@ -174,36 +174,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Bus"><a href="#Bus" class="headerlink" title="Bus"></a>Bus</h1><ol>
-<li>在 main.js 里面</li>
+        <h1 id="Vue-非父子组件通信方案"><a href="#Vue-非父子组件通信方案" class="headerlink" title="Vue 非父子组件通信方案"></a>Vue 非父子组件通信方案</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在 Vue 中模块间的通信很普遍<br>如果是单纯的父子组件间传递信息，父组件可以使用 <a href="https://vuefe.cn/v2/guide/components.html#Props" target="_blank" rel="external">props</a> 将数据向下传递到子组件，而在子组件中可以使用 <a href="https://vuefe.cn/v2/guide/components.html#使用-v-on-的自定义事件" target="_blank" rel="external">$emit</a> （父组件需要先监听对应子组件触发的事件） 向父组件传递信息。<br>但是当我们需要进行非父子组件间的通信或者是通过上述的方式进行父子组件间的通信过于复杂时就需要使用以下的非父子组件通信方案来进行组件间信息的传递：</p>
+<ol>
+<li>使用一个空的 Vue 实例作为一个事件总线中心 Bus</li>
+<li>使用专门的状态管理模式 vueX</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> bus = <span class="keyword">new</span> Vue()</div><div class="line">Vue.prototype.$bus = bus</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>将 bus 从 Vue对象中注入，所以在所有的vue实例中都能通过 this.$bus 访问到 Bus<br> 配合:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 除出事件</span></div><div class="line"><span class="keyword">this</span>.$bus.$emit(<span class="string">'my-event'</span>, <span class="keyword">this</span>.data)</div><div class="line"><span class="comment">// 监听事件</span></div><div class="line"><span class="keyword">this</span>.$bus.$on(<span class="string">'my-event'</span>, <span class="keyword">this</span>.handleFunction)</div><div class="line"><span class="comment">// 取消事件</span></div><div class="line"><span class="keyword">this</span>.$bus.$off(<span class="string">'my-event'</span>, <span class="keyword">this</span>.handleFunction)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 实际使用场景，在需要监听事件的组件中 在 created监听，在beforeDestroy中取消</span></div><div class="line">created ()&#123;</div><div class="line">    <span class="keyword">this</span>.$bus.$on(<span class="string">'switch-change'</span>, <span class="keyword">this</span>.switchChange)</div><div class="line">&#125;,</div><div class="line">beforeDestroy () &#123;</div><div class="line">    <span class="keyword">this</span>.$bus.$off(<span class="string">'switch-change'</span>, <span class="keyword">this</span>.switchChange)</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><ol>
-<li>index.js</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// store/index.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> user <span class="keyword">from</span> <span class="string">'./modules/user'</span></div><div class="line"><span class="keyword">import</span> organization <span class="keyword">from</span> <span class="string">'./modules/organization'</span></div><div class="line"></div><div class="line">Vue.use(Vuex)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">    modules: &#123;</div><div class="line">        user,</div><div class="line">        organization</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<ol>
-<li>namespace 文件</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// src/utils/namespace</span></div><div class="line"><span class="comment">// 命名空间函数</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapValues</span> (<span class="params">obj, f</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> res = &#123;&#125;</div><div class="line">    <span class="built_in">Object</span>.keys(obj).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</div><div class="line">        res[key] = f(obj[key], key)</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">return</span> res</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> (<span class="built_in">module</span>, types) =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> newObj = &#123;&#125;;</div><div class="line"></div><div class="line">    mapValues(types, (names, type) =&gt; &#123;       </div><div class="line">        newObj[type] = &#123;&#125;;</div><div class="line">        types[type].forEach(<span class="function"><span class="params">name</span>=&gt;</span> &#123;</div><div class="line">            <span class="keyword">var</span> newKey = <span class="built_in">module</span> + <span class="string">':'</span> + name;             </div><div class="line">            newObj[type][name] = newKey;</div><div class="line">        &#125;);</div><div class="line">    &#125;)   </div><div class="line">    <span class="keyword">return</span> newObj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>user.js 文件</li>
-</ol>
+<h2 id="一、事件总线中心-Bus"><a href="#一、事件总线中心-Bus" class="headerlink" title="一、事件总线中心 Bus"></a>一、事件总线中心 Bus</h2><p><strong>1. 在 main.js 里面</strong></p>
+<p>将 bus 从 Vue对象中注入，所以在所有的vue实例中都能通过 this.$bus 访问到 Bus配合:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> bus = <span class="keyword">new</span> Vue()</div><div class="line">Vue.prototype.$bus = bus</div></pre></td></tr></table></figure>
+<p><strong>2. 在需要发送或接收的组件里面</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 触发事件</span></div><div class="line"><span class="keyword">this</span>.$bus.$emit(<span class="string">'my-event'</span>, <span class="keyword">this</span>.data);</div><div class="line"><span class="comment">// 监听事件</span></div><div class="line"><span class="keyword">this</span>.$bus.$on(<span class="string">'my-event'</span>, <span class="keyword">this</span>.handleFunction);</div><div class="line"><span class="comment">// 取消事件</span></div><div class="line"><span class="keyword">this</span>.$bus.$off(<span class="string">'my-event'</span>, <span class="keyword">this</span>.handleFunction);</div><div class="line"></div><div class="line"><span class="comment">// 实际使用场景，在需要监听事件的组件中 在 created监听，在beforeDestroy中取消</span></div><div class="line">created ()&#123;</div><div class="line">    <span class="keyword">this</span>.$bus.$on(<span class="string">'switch-change'</span>, <span class="keyword">this</span>.switchChange);</div><div class="line">&#125;,</div><div class="line">beforeDestroy () &#123;</div><div class="line">    <span class="keyword">this</span>.$bus.$off(<span class="string">'switch-change'</span>, <span class="keyword">this</span>.switchChange);</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="二、状态管理模式-vueX"><a href="#二、状态管理模式-vueX" class="headerlink" title="二、状态管理模式 vueX"></a>二、状态管理模式 vueX</h2><p><a href="https://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="external">Vuex</a> 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具 devtools extension，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。</p>
+<p><strong>1. 在 index.js 里面</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// store/index.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>  <span class="comment">// 引入 Vuex</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> user <span class="keyword">from</span> <span class="string">'./modules/user'</span></div><div class="line"><span class="keyword">import</span> organization <span class="keyword">from</span> <span class="string">'./modules/organization'</span></div><div class="line"></div><div class="line">Vue.use(Vuex)  <span class="comment">// 注入 Vue 对象中，这样可以在所有 Vue实例里面访问到</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</div><div class="line">    modules: &#123;</div><div class="line">        user,</div><div class="line">        organization</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><strong>2. namespace 文件</strong></p>
+<p>由于可能需要有多个 vueX modules，为了防止不同的 modules 里面存在同名的属性导致发生不可描述的错误，所以我们需要对不同的 modules 规定到对应的命名空间中，减少发生错误的情况发生。下面是一个给 vuex modules 里面的 action、mutations 对象的属性生成命名空间的工具函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// src/utils/namespace</span></div><div class="line"><span class="comment">// 命名空间函数</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapValues</span> (<span class="params">obj, f</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> res = &#123;&#125;</div><div class="line">    <span class="built_in">Object</span>.keys(obj).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</div><div class="line">        res[key] = f(obj[key], key)</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">return</span> res</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> (<span class="built_in">module</span>, types) =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> newObj = &#123;&#125;;</div><div class="line"></div><div class="line">    mapValues(types, (names, type) =&gt; &#123;</div><div class="line">        newObj[type] = &#123;&#125;;</div><div class="line">        types[type].forEach(<span class="function"><span class="params">name</span>=&gt;</span> &#123;</div><div class="line">            <span class="keyword">var</span> newKey = <span class="built_in">module</span> + <span class="string">':'</span> + name;</div><div class="line">            newObj[type][name] = newKey;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> newObj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>3. types/user.js 文件</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// store/types/user.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> namespace <span class="keyword">from</span> <span class="string">'src/utils/namespace'</span></div><div class="line"></div><div class="line"><span class="comment">// 通过 namespace 函数将 actions mutations 的名字换成具备命名空间的名字</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> namespace(<span class="string">'user'</span>, &#123;</div><div class="line">    actions: [</div><div class="line">        <span class="string">'getMyInfo'</span>,</div><div class="line">        <span class="string">'updatePassword'</span>,</div><div class="line">        <span class="string">'updateInfo'</span>,</div><div class="line">        <span class="string">'refresh'</span>,</div><div class="line">        <span class="string">'exit'</span></div><div class="line">    ],</div><div class="line">    mutations: [</div><div class="line">        <span class="string">'setInfo'</span>,</div><div class="line">        <span class="string">'refresh'</span>,</div><div class="line">    ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>模块输出如下，可以看到我们在对应属性前面加入了我们传入的命名空间及双引号。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 模块输出</span></div><div class="line">&#123;</div><div class="line">    actions : &#123;</div><div class="line">        getMyInfo: <span class="string">"user:getMyInfo"</span>,</div><div class="line">        updatePassword: <span class="string">"user:updatePassword"</span>,</div><div class="line">        updateInfo: <span class="string">"user:updateInfo"</span>,</div><div class="line">        refresh: <span class="string">"user:refresh"</span>,</div><div class="line">        exit: <span class="string">"user:exit"</span></div><div class="line">    &#125;,</div><div class="line">    mutations : &#123;</div><div class="line">        setInfo : <span class="string">"user:setInfo"</span>,</div><div class="line">        refresh : <span class="string">"user:refresh"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>user.js 文件</li>
-</ol>
+<p><strong>4. modules/user.js 文件</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// store/modules/user.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> types <span class="keyword">from</span> <span class="string">'../types/user'</span></div><div class="line"><span class="keyword">import</span> &#123; myAxios, IP &#125; <span class="keyword">from</span> <span class="string">'src/utils/interaction'</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(types))</div><div class="line"></div><div class="line"><span class="keyword">const</span> state = &#123;</div><div class="line">    userName: <span class="string">''</span>,</div><div class="line">    email: <span class="string">''</span>,</div><div class="line">    phone: <span class="string">''</span>,</div><div class="line">    mark: <span class="number">0</span>,</div><div class="line">    userId: <span class="literal">undefined</span>,</div><div class="line">    refresh: <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> getters = &#123;</div><div class="line">    userPhoto (state) &#123;</div><div class="line">        <span class="keyword">return</span>   IP + <span class="string">'picture/'</span> + state.userId +<span class="string">'.jpg?'</span> + state.refresh</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> actions = &#123;</div><div class="line">    [types.actions.getMyInfo]: <span class="function">(<span class="params">context, data</span>) =&gt;</span> &#123;</div><div class="line">        <span class="comment">//context: commit,dispatch,getters,state</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">            myAxios(&#123;</div><div class="line">                method: <span class="string">'POST'</span>,</div><div class="line">                url: <span class="string">'/user/myinfo'</span>,</div><div class="line">            &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">                 <span class="keyword">if</span>(res.data.state.toString()===<span class="string">"1"</span>)&#123;</div><div class="line">                    context.commit(types.mutations.setInfo,res.data.data)</div><div class="line">                    resolve(&#123;</div><div class="line">                        state: <span class="literal">true</span>,</div><div class="line">                        info: res.data.stateInfo&#125;</div><div class="line">                    )</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    resolve(&#123;</div><div class="line">                        state: <span class="literal">false</span>,</div><div class="line">                        info: res.data.stateInfo&#125;</div><div class="line">                    )</div><div class="line">                &#125;</div><div class="line">            &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">                reject(err)</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &#125;,</div><div class="line">    [types.actions.updateInfo]: <span class="function">(<span class="params">context, data</span>) =&gt;</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">           <span class="comment">//请求</span></div><div class="line">        &#125;)</div><div class="line">    &#125;,</div><div class="line">    [types.actions.updatePassword]: <span class="function">(<span class="params">context, data</span>) =&gt;</span> &#123;</div><div class="line">    &#125;,</div><div class="line">    [types.actions.refresh]: <span class="function">(<span class="params">context</span>) =&gt;</span> &#123;</div><div class="line">    &#125;,</div><div class="line">    [types.actions.exit]: <span class="function">(<span class="params">context</span>) =&gt;</span> &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> mutations = &#123;</div><div class="line">    [types.mutations.setInfo]: <span class="function">(<span class="params">state, datas</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">Object</span>.assign(state,datas)</div><div class="line">    &#125;,</div><div class="line">    [types.mutations.refresh]: <span class="function">(<span class="params">state, data</span>) =&gt;</span> &#123;</div><div class="line">        state.refresh = data</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  state,</div><div class="line">  getters,</div><div class="line">  actions,</div><div class="line">  mutations</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<ol>
-<li>在模块中引用</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// component/teample.vue</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    import &#123;mapState, mapGetters, mapActions&#125; from &apos;vuex&apos;</div><div class="line">    import user from &apos;../store/types/user&apos;</div><div class="line">    </div><div class="line">    export default &#123; </div><div class="line">        data () &#123;</div><div class="line">            return &#123;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        computed: &#123;</div><div class="line">            ...mapState(&#123;</div><div class="line">                &apos;user&apos;: state =&gt; &#123;             // 引入 user 的 state</div><div class="line">                    return state.user</div><div class="line">                &#125;</div><div class="line">            &#125;),</div><div class="line">            ...mapGetters([ </div><div class="line">                &apos;userPhoto&apos;,   // 引入 user 的 getters</div><div class="line">            ])</div><div class="line">        &#125;,</div><div class="line">        methods: &#123;</div><div class="line">            ...mapActions(user.actions),    // 引入 user 的 actions</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><strong>5. 在模块中引用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// component/teample.vue</span></div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">import</span> &#123;mapState, mapGetters, mapActions&#125; <span class="keyword">from</span> <span class="string">'vuex'</span>;</div><div class="line">    <span class="keyword">import</span> user <span class="keyword">from</span> <span class="string">'../store/types/user'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">        data () &#123;</div><div class="line">            <span class="keyword">return</span> &#123;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        computed: &#123;</div><div class="line">            ...mapState(&#123;</div><div class="line">                <span class="string">'user'</span>: <span class="function"><span class="params">state</span> =&gt;</span> &#123;             <span class="comment">// 引入 user 的 state</span></div><div class="line">                    <span class="keyword">return</span> state.user</div><div class="line">                &#125;</div><div class="line">            &#125;),</div><div class="line">            ...mapGetters([</div><div class="line">                <span class="string">'userPhoto'</span>,                  <span class="comment">// 引入 user 的 getters</span></div><div class="line">            ])</div><div class="line">        &#125;,</div><div class="line">        methods: &#123;</div><div class="line">            ...mapActions(user.actions),     <span class="comment">// 引入 user 的 actions</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <hr>
-<p><strong> 声明：</strong><br>文章标题：<a href="https://ccczss.github.io/2017/10/01/Bus-and-Vuex/" target="_blank" rel="external">Bus and Vuex</a><br>文章作者：Czs<br>文章链接：<a href="https://ccczss.github.io/2017/10/01/Bus-and-Vuex/" target="_blank" rel="external">https://ccczss.github.io/2017/10/01/Bus-and-Vuex/</a><br>文章版权属本博主所有，有问题或者建议欢迎在下方评论。欢迎转载、引用，但请标明作者和原文地址，谢谢。</p>
+<p><strong>声明：</strong><br>文章作者：Czs<br>转载、引用，但请标明作者和原文地址 :<a href="https://ccczss.github.io/2017/10/01/Bus-and-Vuex/" target="_blank" rel="external">https://ccczss.github.io/2017/10/01/Bus-and-Vuex/</a></p>
 
       
 
@@ -312,9 +309,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/02/28/nodejs命令学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          nodejs命令学习
+        
+      </div>
+    </a>
   
-    <a href="/2017/10/01/transform-3D/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">transform-3D</div>
+  
+    <a href="/2017/10/01/transfrom-3D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS3 Tranform 3D 的应用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -357,7 +363,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Czs
+    		&copy; 2018 Czs
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -461,10 +467,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -477,18 +479,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">transform</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
@@ -497,7 +487,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,15 +515,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">transform</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原型链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,6 +532,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CORS</a>
               </li>
             
             <div class="clearfix"></div>
