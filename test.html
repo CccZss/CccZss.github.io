@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <input class="cls-a" type="checkbox" checked custom="1"/>
+  <div id="app">
+  </div>
+  &#x26 &amp;
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var vm = new Vue({
+    el: '#app',
+    template: `<div>
+      <child name="aaaa" aaa="2222"></child>
+      <textarea placeholder="some placeholder...">some placeholder...</textarea>
+    </div>`,
+    data: {
+      a: 1
+    },
+    computed: {
+      aa: function() {
+        return this.a + 1;
+      }
+    },
+    components: {
+      child: {
+        template: `<p>{{name}}</p>`,
+        props: {
+          name: {
+            type: String,
+            default: "aaaa",
+            request: true
+          }
+        }
+      }
+    }
+})
+</script>
+</html>
