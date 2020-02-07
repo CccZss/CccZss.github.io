@@ -7,6 +7,10 @@
 <body>
   <input class="cls-a" type="checkbox" checked custom="1"/>
   <div id="app">
+    <div>
+      <child name="aaaa" aaa="2222"></child>
+      <textarea placeholder="some placeholder...">some placeholder...</textarea>
+    </div>
   </div>
   &#x26 &amp;
 </body>
@@ -14,10 +18,6 @@
 <script>
 var vm = new Vue({
     el: '#app',
-    template: `<div>
-      <child name="aaaa" aaa="2222"></child>
-      <textarea placeholder="some placeholder...">some placeholder...</textarea>
-    </div>`,
     data: {
       a: 1
     },
